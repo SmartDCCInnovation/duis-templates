@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.0">
+  <sr:Header>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A0:1000</sr:RequestID>
+    <sr:CommandVariant>5</sr:CommandVariant>
+    <sr:ServiceReference>X</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>Y</sr:ServiceReferenceVariant>
+  </sr:Header>
+  <sr:Body>
+    <sr:SignedPreCommand>
+      <sr:GBCSPayload>aGVsbG8gd29ybGQ=</sr:GBCSPayload>
+    </sr:SignedPreCommand>
+  </sr:Body>
+</sr:Request>

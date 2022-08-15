@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.1">
+  <sr:Header>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A3:1000</sr:RequestID>
+    <sr:CommandVariant>1</sr:CommandVariant>
+    <sr:ServiceReference>6.21</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>6.21</sr:ServiceReferenceVariant>
+  </sr:Header>
+  <sr:Body>
+    <sr:RequestHandoverOfDCCControlledDevice>
+      <sr:RemotePartyRole>Supplier</sr:RemotePartyRole>
+      <sr:RemotePartyFloorSeqNumber>0</sr:RemotePartyFloorSeqNumber>
+      <sr:RemotePartyPrepaymentTopUpFloorSeqNumber>0</sr:RemotePartyPrepaymentTopUpFloorSeqNumber>
+      <sr:ReplacementCertificates>
+        <sr:DigitalSigningCertificate>MIIBrDCCAVKgAwIBAgIQT7xSUgGh11hsG8HEc03rnzAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMTUxMDMwMDAwMDAwWhcNMjUxMDI5MjM1OTU5WjA7MRgwFgYDVQQDDA9HSVRURVNUU1VQUExJRVIxCzAJBgNVBAsMAjAyMRIwEAYDVQQtAwkAkLPVHzABAAAwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQwwqtaDRMXJv+9qA55KUzDdTRDKj5CRAW5ejq6D/x53OcpslF1Y8t9lYJ+TFC0jLo9h9WJPFG5bYfDReNxf4weo1kwVzAOBgNVHQ8BAf8EBAMCB4AwEQYDVR0OBAoECESJl5LRlvS4MB0GA1UdIAEB/wQTMBEwDwYNKoY6AAGEj7kPAQIBBDATBgNVHSMEDDAKgAhPVojX7JM74jAKBggqhkjOPQQDAgNIADBFAiEA39CQ51c+r1+oLhqn242f7VEYObV1LVXRAJHyUP3xiiICIF637Dax9BM+UVV9M7WcSe9rvRDpqksdzZKOZbPprdHF</sr:DigitalSigningCertificate>
+        <sr:KeyAgreementCertificate>MIIBkjCCATigAwIBAgIQOzYmV3Meayu+B4ZQz6FPFTAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMTUxMDMwMDAwMDAwWhcNMjUxMDI5MjM1OTU5WjAhMQswCQYDVQQLDAIwMjESMBAGA1UELQMJAJCz1R8wAQAAMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEknT/+KOvVtawFtOo+mDaPleVUespWBnIDrekPzByKyJVBCheSlF2uWM027cuoM/AycbkCgrjwok3w0JY8OhAuqNZMFcwDgYDVR0PAQH/BAQDAgMIMBEGA1UdDgQKBAhAW4xiaH2PcDAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDSAAwRQIgFr/75lBWSxc8gzYM2B2KIo9qDgZml43a49UDQDJxy9cCIQCcncpTfMwNiHEJMBqualHKnx28X5I+HWDdRugWzqYbDA==</sr:KeyAgreementCertificate>
+        <sr:KeyAgreementTopUpCertificate>MIIBkzCCATigAwIBAgIQcDczd07yuOUPevK7szwZjzAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMTUxMTA0MDAwMDAwWhcNMjUxMTAzMjM1OTU5WjAhMQswCQYDVQQLDAIwMjESMBAGA1UELQMJAJCz1R8wAQAAMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBdlFPNkJJ5oRxNm79XNExB6cOd8TjQtI4FMz2x4Kl/LffrimvSIrn2vr0Kq4aszgu6jcq+8Q878V+lBXx2PkIaNZMFcwDgYDVR0PAQH/BAQDAgMIMBEGA1UdDgQKBAhB+0kiFYjFcDAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDSQAwRgIhAKRUHa7X2ceF+xwME/Y8HsXpO+8a/OSF3GL2u2GA6lJVAiEAsrkZVMUmMEmApGXZqP5Zz4Ym2IQzloJfAhwaeURYKEs=</sr:KeyAgreementTopUpCertificate>
+      </sr:ReplacementCertificates>
+      <sr:CertificationPathCertificates>
+        <sr:Certificate>MIIBoDCCAUWgAwIBAgIQcYcr28gnibwUAc4BugatozAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwMDELMAkGA1UEAxMCWkEwHhcNMTUxMDI5MDAwMDAwWhcNNDAxMDI4MjM1OTU5WjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQaK5JAl7WNcLDCz3TrodKm8darVpVTQ/EylGjGQyf8/iiHa1YMtceDpXIv07nr2POilEHZz/QlVKyod440dBzVo20wazAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEQYDVR0OBAoECE9WiNfskzviMBMGA1UdIwQMMAqACEjPGzJpfEZpMAoGCCqGSM49BAMCA0kAMEYCIQD83y6WgCXi6PjTU0iNp2fezAqqPIqGsn3cE/ZfMhYytQIhAK4xYtS/yR0FumzGtt5GaOqSkd6Pssbht0tOjQxrq8dq</sr:Certificate>
+      </sr:CertificationPathCertificates>
+      <sr:ApplyTimeBasedCPVChecks>true</sr:ApplyTimeBasedCPVChecks>
+    </sr:RequestHandoverOfDCCControlledDevice>
+  </sr:Body>
+  <ds:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <!-- NOTE: The digest, signature and serial number values below are placeholders and should not be used for actual authentication purposes. -->
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"/>
+      <ds:Reference URI="">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>ZGVmYXVsdA==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>ZGVmYXVsdA==</ds:SignatureValue>
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>CN=U1, OU=07</ds:X509IssuerName>
+          <ds:X509SerialNumber>1234567890</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+      </ds:X509Data>
+    </ds:KeyInfo>
+  </ds:Signature>
+</sr:Request>

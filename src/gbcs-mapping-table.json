@@ -1,0 +1,1037 @@
+[
+    {
+        "Use Case Name": "Add Device to CHF device log",
+        "Use Case Title": "CCS01 Add Device to CHF device log",
+        "Code": "CCS01"
+    },
+    {
+        "Use Case Name": "Remove device from CHF device log",
+        "Use Case Title": "CCS02 Remove device from CHF device log",
+        "Code": "CCS02"
+    },
+    {
+        "Use Case Name": "Restore CHF Device Log",
+        "Use Case Title": "CCS03 Restore CHF Device Log",
+        "Code": "CCS03"
+    },
+    {
+        "Use Case Name": "Restore GPF Device Log",
+        "Use Case Title": "GCS59 Restore GPF Device Log",
+        "Code": "GCS59"
+    },
+    {
+        "Use Case Name": "Backup GPF Device Log",
+        "Use Case Title": "GCS62 Backup GPF Device Log",
+        "Code": "GCS62"
+    },
+    {
+        "Use Case Name": "Apply Prepayment Top Up",
+        "Use Case Title": "CS01a Apply Prepayment Top Up to an ESME",
+        "Code": "CS01a"
+    },
+    {
+        "Use Case Name": "Apply Prepayment Top Up",
+        "Use Case Title": "CS01b Apply Prepayment Top Up to a GSME",
+        "Code": "CS01b"
+    },
+    {
+        "Use Case Name": "Provide Security Credentials Details",
+        "Use Case Title": "CS02a Provide Security Credentials Details",
+        "Code": "CS02a"
+    },
+    {
+        "Use Case Name": "Update Security Credentials",
+        "Use Case Title": "CS02b Update Security Credentials",
+        "Code": "CS02b"
+    },
+    {
+        "Use Case Name": "Issue Security Credentials",
+        "Use Case Title": "CS02c Issue Security Credentials",
+        "Code": "CS02c"
+    },
+    {
+        "Use Case Name": "Update Device Certificates on Device",
+        "Use Case Title": "CS02d Update Device Certificates on Device",
+        "Code": "CS02d"
+    },
+    {
+        "Use Case Name": "Provide Device Certificates from Device",
+        "Use Case Title": "CS02e Provide Device Certificates from Device",
+        "Code": "CS02e"
+    },
+    {
+        "Use Case Name": "Method A Join (Meter)",
+        "Use Case Title": "CS03A1 Method A Join (Meter)",
+        "Code": "CS03A1"
+    },
+    {
+        "Use Case Name": "Method B Join",
+        "Use Case Title": "CS03B Method B Join",
+        "Code": "CS03B"
+    },
+    {
+        "Use Case Name": "Method A Join (non-Meter)",
+        "Use Case Title": "CS03A2 Method A Join (non Meter)",
+        "Code": "CS03A2"
+    },
+    {
+        "Use Case Name": "Method C Join",
+        "Use Case Title": "CS03C Method C Join",
+        "Code": "CS03C"
+    },
+    {
+        "Use Case Name": "Method A or C Unjoin",
+        "Use Case Title": "CS04AC Method A or C Unjoin",
+        "Code": "CS04AC"
+    },
+    {
+        "Use Case Name": "Method B Unjoin",
+        "Use Case Title": "CS04B Method B Unjoin",
+        "Code": "CS04B"
+    },
+    {
+        "Use Case Name": "Distribute Firmware",
+        "Use Case Title": "CS05a Distribute Firmware to Communications Hub",
+        "Code": "CS05a"
+    },
+    {
+        "Use Case Name": "Distribute Firmware",
+        "Use Case Title": "CS05b Distribute Firmware to ESME / GSME",
+        "Code": "CS05b"
+    },
+    {
+        "Use Case Name": "Activate Firmware",
+        "Use Case Title": "CS06 Activate Firmware",
+        "Code": "CS06"
+    },
+    {
+        "Use Case Name": "Read Device Join Details",
+        "Use Case Title": "CS07 Read Device Join Details",
+        "Code": "CS07"
+    },
+    {
+        "Use Case Name": "Device Addition To / Removal From HAN Whitelist Alerts",
+        "Use Case Title": "CS14 Device Addition To / Removal From HAN Whitelist Alerts",
+        "Code": "CS14"
+    },
+    {
+        "Use Case Name": "Set Tariff and Price",
+        "Use Case Title": "ECS01a Set Tariff and Price on ESME",
+        "Code": "ECS01a"
+    },
+    {
+        "Use Case Name": "Set Tariff and Price",
+        "Use Case Title": "GCS01a Set Tariff and Price on GSME",
+        "Code": "GCS01a"
+    },
+    {
+        "Use Case Name": "Set Price",
+        "Use Case Title": "ECS01b Set Price on ESME",
+        "Code": "ECS01b"
+    },
+    {
+        "Use Case Name": "Set Price",
+        "Use Case Title": "GCS01b Set Price on GSME",
+        "Code": "GCS01b"
+    },
+    {
+        "Use Case Name": "Set Tariff and Price - Second Element",
+        "Use Case Title": "ECS01c Set Tariff and Price on ESME secondary",
+        "Code": "ECS01c"
+    },
+    {
+        "Use Case Name": "Set Payment Mode to Credit",
+        "Use Case Title": "ECS02 Set ESME Payment Mode to Credit",
+        "Code": "ECS02"
+    },
+    {
+        "Use Case Name": "Set Payment Mode to Credit",
+        "Use Case Title": "GCS02 Set GSME Payment Mode to Credit",
+        "Code": "GCS02"
+    },
+    {
+        "Use Case Name": "Set Payment Mode to Prepayment",
+        "Use Case Title": "ECS03 Set ESME Payment Mode to Prepayment",
+        "Code": "ECS03"
+    },
+    {
+        "Use Case Name": "Set Payment Mode to Prepayment",
+        "Use Case Title": "GCS03 Set GSME Payment Mode to Prepayment",
+        "Code": "GCS03"
+    },
+    {
+        "Use Case Name": "Adjust Prepayment Mode Meter Balance",
+        "Use Case Title": "GCS40a Adjust Prepayment Mode Meter Balance on the GSME",
+        "Code": "GCS40a"
+    },
+    {
+        "Use Case Name": "Adjust Prepayment Mode Meter Balance: Reset",
+        "Use Case Title": "GCS40b Reset Prepayment Mode Meter Balance on the GSME",
+        "Code": "GCS40b"
+    },
+    {
+        "Use Case Name": "Adjust Credit Mode Meter Balance",
+        "Use Case Title": "GCS40c Adjust Credit Mode Meter Balance on the GSME",
+        "Code": "GCS40c"
+    },
+    {
+        "Use Case Name": "Adjust Credit Mode Meter Balance: Reset",
+        "Use Case Title": "GCS40d Reset Credit Mode Meter Balance on the GSME",
+        "Code": "GCS40d"
+    },
+    {
+        "Use Case Name": "Reset Tariff Block Counter Matrix",
+        "Use Case Title": "ECS05 Reset Tariff Block Counter Matrix",
+        "Code": "ECS05"
+    },
+    {
+        "Use Case Name": "Debt Management",
+        "Use Case Title": "ECS07 Manage Debt on the ESME",
+        "Code": "ECS07"
+    },
+    {
+        "Use Case Name": "Debt Management",
+        "Use Case Title": "GCS04 Manage Debt on the GSME",
+        "Code": "GCS04"
+    },
+    {
+        "Use Case Name": "Activate Emergency Credit Remotely",
+        "Use Case Title": "ECS09 Activate Emergency Credit Remotely on ESME",
+        "Code": "ECS09"
+    },
+    {
+        "Use Case Name": "Activate Emergency Credit Remotely",
+        "Use Case Title": "GCS06 Activate Emergency Credit Remotely on GSME",
+        "Code": "GCS06"
+    },
+    {
+        "Use Case Name": "Send Message to Meter",
+        "Use Case Title": "ECS10 Send Message to ESME",
+        "Code": "ECS10"
+    },
+    {
+        "Use Case Name": "Send Message to Meter",
+        "Use Case Title": "GCS07 Send Message to GSME",
+        "Code": "GCS07"
+    },
+    {
+        "Use Case Name": "Set Change of Tenancy date",
+        "Use Case Title": "ECS12 Set Change of Tenancy date on ESME",
+        "Code": "ECS12"
+    },
+    {
+        "Use Case Name": "Set Change of Tenancy date",
+        "Use Case Title": "GCS09 Set Change of Tenancy date on GPF",
+        "Code": "GCS09"
+    },
+    {
+        "Use Case Name": "Disable Privacy PIN Protection",
+        "Use Case Title": "ECS14 Disable Privacy PIN Protection on ESME",
+        "Code": "ECS14"
+    },
+    {
+        "Use Case Name": "Disable Privacy PIN Protection",
+        "Use Case Title": "GCS11 Disable Privacy PIN Protection on GSME",
+        "Code": "GCS11"
+    },
+    {
+        "Use Case Name": "Clear Event Log",
+        "Use Case Title": "ECS15a Clear ESME Event Log",
+        "Code": "ECS15a"
+    },
+    {
+        "Use Case Name": "Clear Event Log",
+        "Use Case Title": "CS11 Clear ZigBee Device Event Log",
+        "Code": "CS11"
+    },
+    {
+        "Use Case Name": "Write Supplier Contact Details",
+        "Use Case Title": "ECS16 Write Supplier Contact Details on ESME",
+        "Code": "ECS16"
+    },
+    {
+        "Use Case Name": "Write Supplier Contact Details",
+        "Use Case Title": "GCS44 Write Contact Details on GSME",
+        "Code": "GCS44"
+    },
+    {
+        "Use Case Name": "Read ESME Energy Registers (Export Energy)",
+        "Use Case Title": "ECS17a Read ESME Energy Registers (Export Energy)",
+        "Code": "ECS17a"
+    },
+    {
+        "Use Case Name": "Read Import Energy / Consumption Registers",
+        "Use Case Title": "ECS17b Read ESME Energy Registers (Import Energy)",
+        "Code": "ECS17b"
+    },
+    {
+        "Use Case Name": "Read Import Energy / Consumption Registers",
+        "Use Case Title": "GCS13a Read GSME Consumption Register",
+        "Code": "GCS13a"
+    },
+    {
+        "Use Case Name": "Read ESME Energy Registers (Power)",
+        "Use Case Title": "ECS17c Read ESME Energy Registers (Power)",
+        "Code": "ECS17c"
+    },
+    {
+        "Use Case Name": "Read Energy / Consumption Register (TOU)",
+        "Use Case Title": "ECS17d Read ESME Energy Register (TOU)",
+        "Code": "ECS17d"
+    },
+    {
+        "Use Case Name": "Read Energy / Consumption Register (TOU)",
+        "Use Case Title": "GCS13c Read GSME Register (TOU)",
+        "Code": "GCS13c"
+    },
+    {
+        "Use Case Name": "Read ESME Energy Register (TOU with Blocks)",
+        "Use Case Title": "ECS17e Read ESME Energy Register (TOU with Blocks)",
+        "Code": "ECS17e"
+    },
+    {
+        "Use Case Name": "Read GSME Energy Register (Block Counters)",
+        "Use Case Title": "GCS13b Read GSME Block Counters",
+        "Code": "GCS13b"
+    },
+    {
+        "Use Case Name": "Read Maximum Demand Registers (export)",
+        "Use Case Title": "ECS18a Read Maximum Demand Registers (export)",
+        "Code": "ECS18a"
+    },
+    {
+        "Use Case Name": "Read Maximum Demand Registers (import)",
+        "Use Case Title": "ECS18b Read Maximum Demand Registers (import)",
+        "Code": "ECS18b"
+    },
+    {
+        "Use Case Name": "Read Prepayment Registers",
+        "Use Case Title": "ECS19 Read ESME Prepayment Registers",
+        "Code": "ECS19"
+    },
+    {
+        "Use Case Name": "Read Prepayment Registers",
+        "Use Case Title": "GCS14 Read GSME Prepayment Register(s)",
+        "Code": "GCS14"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (change of mode / tariff triggered exc export)",
+        "Use Case Title": "ECS20b Read ESME Billing Data Log (change of mode / tariff triggered exc export)",
+        "Code": "ECS20b"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (change of mode / tariff triggered exc export)",
+        "Use Case Title": "GCS15b Read GSME Billing Data Log (change of mode / tariff triggered)",
+        "Code": "GCS15b"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (billing calendar triggered exc export)",
+        "Use Case Title": "ECS20c Read ESME Billing Data Log (billing calendar triggered exc export)",
+        "Code": "ECS20c"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (billing calendar triggered exc export)",
+        "Use Case Title": "GCS15c Read GSME Billing Data Log (billing calendar triggered)",
+        "Code": "GCS15c"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (payment-based debt payments)",
+        "Use Case Title": "ECS20a Read ESME Billing Data Log (payment based debt payments)",
+        "Code": "ECS20a"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (payment-based debt payments)",
+        "Use Case Title": "GCS15d Read GSME Billing Data Log (payment-based debt payments)",
+        "Code": "GCS15d"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (prepayment credits)",
+        "Use Case Title": "ECS20d Read ESME Billing Data Log (prepayment credits)",
+        "Code": "ECS20d"
+    },
+    {
+        "Use Case Name": "Read Billing Data Log (prepayment credits)",
+        "Use Case Title": "GCS15e Read GSME Billing Data Log (prepayment credits)",
+        "Code": "GCS15e"
+    },
+    {
+        "Use Case Name": "Start Network Data Log on GSME",
+        "Use Case Title": "GCS31 Start Network Data Log on GSME",
+        "Code": "GCS31"
+    },
+    {
+        "Use Case Name": "Read Gas Network Data Log",
+        "Use Case Title": "GCS18 Read Gas Network Data Log",
+        "Code": "GCS18"
+    },
+    {
+        "Use Case Name": "Read Daily Read Log (exc export)",
+        "Use Case Title": "ECS21a Read Electricity Daily Read Log (exc export)",
+        "Code": "ECS21a"
+    },
+    {
+        "Use Case Name": "Read Daily Read Log (exc export)",
+        "Use Case Title": "GCS16a Read GSME Daily Read log(s)",
+        "Code": "GCS16a"
+    },
+    {
+        "Use Case Name": "Read (Prepayment) Daily Read Log",
+        "Use Case Title": "ECS21b Read Electricity (Prepayment) Daily Read Log",
+        "Code": "ECS21b"
+    },
+    {
+        "Use Case Name": "Read (Prepayment) Daily Read Log",
+        "Use Case Title": "GCS16b Read GSME Daily Read log(s) (prepayment)",
+        "Code": "GCS16b"
+    },
+    {
+        "Use Case Name": "Read Electricity Daily Read Log (export only)",
+        "Use Case Title": "ECS21c Read Electricity Daily Read Log (export only)",
+        "Code": "ECS21c"
+    },
+    {
+        "Use Case Name": "Read Half Hour Profile Data (export)",
+        "Use Case Title": "ECS22a Read Electricity Half Hour Profile Data (export)",
+        "Code": "ECS22a"
+    },
+    {
+        "Use Case Name": "Read Half Hour Profile Data (consumption)",
+        "Use Case Title": "ECS22b Read Electricity Half Hour Profile Data (active import)",
+        "Code": "ECS22b"
+    },
+    {
+        "Use Case Name": "Read Half Hour Profile Data (consumption)",
+        "Use Case Title": "GCS17 Read GSME Profile Data Log",
+        "Code": "GCS17"
+    },
+    {
+        "Use Case Name": "Read Half Hour Profile Data (reactive import)",
+        "Use Case Title": "ECS22c Read Electricity Half Hour Profile Data (reactive import)",
+        "Code": "ECS22c"
+    },
+    {
+        "Use Case Name": "Read Voltage Operational Data",
+        "Use Case Title": "ECS23 Read Voltage Operational Data",
+        "Code": "ECS23"
+    },
+    {
+        "Use Case Name": "Read Tariff Data",
+        "Use Case Title": "ECS24 Read ESME Tariff Data",
+        "Code": "ECS24"
+    },
+    {
+        "Use Case Name": "Read Tariff Data",
+        "Use Case Title": "GCS21f Read GSME Tariff Data",
+        "Code": "GCS21f"
+    },
+    {
+        "Use Case Name": "Set Alert  Behaviours - Supplier",
+        "Use Case Title": "ECS25a Set Alert Behaviours - ESME - Supplier",
+        "Code": "ECS25a"
+    },
+    {
+        "Use Case Name": "Set Alert  Behaviours - Supplier",
+        "Use Case Title": "GCS20 Set Alert Behaviours - GSME",
+        "Code": "GCS20"
+    },
+    {
+        "Use Case Name": "Set Alert  Behaviours - Network Operator",
+        "Use Case Title": "ECS25b Set Alert Behaviours - ESME - Network Operator",
+        "Code": "ECS25b"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Prepayment",
+        "Use Case Title": "ECS26a Read ESME Configuration Data Prepayment",
+        "Code": "ECS26a"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Prepayment",
+        "Use Case Title": "GCS21b Read GSME Configuration Data Prepayment",
+        "Code": "GCS21b"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (gas)",
+        "Use Case Title": "GCS21a Read Gas Configuration Data Device Information",
+        "Code": "GCS21a"
+    },
+    {
+        "Use Case Name": "Read Configuration Voltage Data",
+        "Use Case Title": "ECS26b Read ESME Configuration Voltage Data",
+        "Code": "ECS26b"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information  (randomisation)",
+        "Use Case Title": "ECS26c Read ESME Configuration Data Device Information  (randomisation)",
+        "Code": "ECS26c"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (instantaneous power thresholds)",
+        "Use Case Title": "ECS26f Read ESME Configuration Data Device Information (instantaneous power thresholds)",
+        "Code": "ECS26f"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Payment Mode)",
+        "Use Case Title": "ECS26j Read ESME Configuration Data Device Information (Payment Mode)",
+        "Code": "ECS26j"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Payment Mode)",
+        "Use Case Title": "GCS21j Read GSME Configuration Data Device Information (Payment Mode)",
+        "Code": "GCS21j"
+    },
+    {
+        "Use Case Name": "Read Configuration Voltage Data - 3 Phase",
+        "Use Case Title": "ECS26k Read ESME Configuration Voltage Data - 3 phase",
+        "Code": "ECS26k"
+    },
+    {
+        "Use Case Name": "Read Load Limit Data",
+        "Use Case Title": "ECS27 Read ESME Load Limit Data",
+        "Code": "ECS27"
+    },
+    {
+        "Use Case Name": "Set Load Limit Configurations - General Settings",
+        "Use Case Title": "ECS28a Set Load Limit Configurations - General Settings",
+        "Code": "ECS28a"
+    },
+    {
+        "Use Case Name": "Set Load Limit Configuration Counter Reset",
+        "Use Case Title": "ECS28b Set Load Limit Configuration Counter Reset",
+        "Code": "ECS28b"
+    },
+    {
+        "Use Case Name": "Set Voltage Configurations on ESME with counter resets",
+        "Use Case Title": "ECS29a Set Voltage Configurations on ESME",
+        "Code": "ECS29a"
+    },
+    {
+        "Use Case Name": "Set Voltage Configurations on ESME - 3 ph with counter resets",
+        "Use Case Title": "ECS29b Set Voltage Configurations on ESME - 3ph",
+        "Code": "ECS29b"
+    },
+    {
+        "Use Case Name": "Set Instantaneous Power Threshold Configuration",
+        "Use Case Title": "ECS34 Set Instantaneous Power Threshold Configuration",
+        "Code": "ECS34"
+    },
+    {
+        "Use Case Name": "Read device Event Log",
+        "Use Case Title": "ECS35a Read ESME Event Log",
+        "Code": "ECS35a"
+    },
+    {
+        "Use Case Name": "Read device Event Log",
+        "Use Case Title": "CS10a Read ZigBee Device Event Log",
+        "Code": "CS10a"
+    },
+    {
+        "Use Case Name": "Read device Security Log",
+        "Use Case Title": "ECS35b Read ESME Security Log",
+        "Code": "ECS35b"
+    },
+    {
+        "Use Case Name": "Read device Security Log",
+        "Use Case Title": "CS10b Read ZigBee Device Security Log",
+        "Code": "CS10b"
+    },
+    {
+        "Use Case Name": "Read CHF Event Log",
+        "Use Case Title": "ECS35c Read CHF Event Log",
+        "Code": "ECS35c"
+    },
+    {
+        "Use Case Name": "Read CHF Security Log",
+        "Use Case Title": "ECS35d Read CHF Security Log",
+        "Code": "ECS35d"
+    },
+    {
+        "Use Case Name": "Read ESME Power Event Log",
+        "Use Case Title": "ECS35e Read ESME Power Event Log",
+        "Code": "ECS35e"
+    },
+    {
+        "Use Case Name": "Set Maximum Demand Configurable Time Period",
+        "Use Case Title": "ECS37 Set Maximum Demand Configurable Time Period",
+        "Code": "ECS37"
+    },
+    {
+        "Use Case Name": "Update Randomised Offset Limit",
+        "Use Case Title": "ECS38 Update Randomised Offset Limit",
+        "Code": "ECS38"
+    },
+    {
+        "Use Case Name": "Set MPAN / MPRN Value",
+        "Use Case Title": "ECS39a Set MPAN Value on the ESME",
+        "Code": "ECS39a"
+    },
+    {
+        "Use Case Name": "Set MPAN / MPRN Value",
+        "Use Case Title": "GCS41 Set MPRN Value on the GSME",
+        "Code": "GCS41"
+    },
+    {
+        "Use Case Name": "Set Export MPAN Value on the ESME",
+        "Use Case Title": "ECS39b Set Export MPAN Value on the ESME",
+        "Code": "ECS39b"
+    },
+    {
+        "Use Case Name": "Read MPAN / MPRN Value",
+        "Use Case Title": "ECS40 Read MPAN Value on the ESME",
+        "Code": "ECS40"
+    },
+    {
+        "Use Case Name": "Read MPAN / MPRN Value",
+        "Use Case Title": "GCS46 Read MPRN on the GSME",
+        "Code": "GCS46"
+    },
+    {
+        "Use Case Name": "Remotely Close the Load Switch on the ESME",
+        "Use Case Title": "ECS42 Remotely Close the Load Switch on the ESME",
+        "Code": "ECS42"
+    },
+    {
+        "Use Case Name": "Remotely Open the Load Switch / close Valve",
+        "Use Case Title": "ECS43 Remotely Open the Load Switch on the ESME",
+        "Code": "ECS43"
+    },
+    {
+        "Use Case Name": "Remotely Open the Load Switch / close Valve",
+        "Use Case Title": "GCS32 Remotely close the valve in the GSME",
+        "Code": "GCS32"
+    },
+    {
+        "Use Case Name": "Arm Load Switch / Valve",
+        "Use Case Title": "ECS44 Arm Load Switch in ESME",
+        "Code": "ECS44"
+    },
+    {
+        "Use Case Name": "Arm Load Switch / Valve",
+        "Use Case Title": "GCS39 Arm Valve in GSME",
+        "Code": "GCS39"
+    },
+    {
+        "Use Case Name": "Read Status of Load Switch / Valve",
+        "Use Case Title": "ECS45 Read Status of Load Switch in the ESME",
+        "Code": "ECS45"
+    },
+    {
+        "Use Case Name": "Read Status of Load Switch / Valve",
+        "Use Case Title": "GCS33 Read GSME Valve Status",
+        "Code": "GCS33"
+    },
+    {
+        "Use Case Name": "Set Auxiliary Controller Descriptions",
+        "Use Case Title": "ECS46a Set Auxiliary Controller Descriptions",
+        "Code": "ECS46a"
+    },
+    {
+        "Use Case Name": "Send CIN to meter",
+        "Use Case Title": "ECS50 Send CIN to ESME",
+        "Code": "ECS50"
+    },
+    {
+        "Use Case Name": "Send CIN to meter",
+        "Use Case Title": "GCS36 Send CIN to GSME",
+        "Code": "GCS36"
+    },
+    {
+        "Use Case Name": "Read ESME/SAPC/GSME/Comms Hub Firmware Version",
+        "Use Case Title": "ECS52 Read ESME/SAPC/Comms Hub Firmware Version",
+        "Code": "ECS52"
+    },
+    {
+        "Use Case Name": "Read ESME/SAPC/GSME/Comms Hub Firmware Version",
+        "Use Case Title": "GCS38 Read GSME Firmware Version",
+        "Code": "GCS38"
+    },
+    {
+        "Use Case Name": "Reset Maximum Demand Registers",
+        "Use Case Title": "ECS57 Reset ESME Maximum Demand Registers",
+        "Code": "ECS57"
+    },
+    {
+        "Use Case Name": "Read Boost Function Data",
+        "Use Case Title": "ECS61c Read Boost Function Data",
+        "Code": "ECS61c"
+    },
+    {
+        "Use Case Name": "Set ALCS/APC and Boost Function Association",
+        "Use Case Title": "ECS62 Set ALCS/APC and Boost Function Association",
+        "Code": "ECS62"
+    },
+    {
+        "Use Case Name": "Read Daily Consumption Log",
+        "Use Case Title": "ECS66 Read ESME Daily Consumption Log",
+        "Code": "ECS66"
+    },
+    {
+        "Use Case Name": "Read Daily Consumption Log",
+        "Use Case Title": "GCS61 Read gas Daily Consumption Log",
+        "Code": "GCS61"
+    },
+    {
+        "Use Case Name": "Critical Sensitive Alert (Billing Data Log)",
+        "Use Case Title": "ECS68 ESME Critical Sensitive Alert (Billing Data Log)",
+        "Code": "ECS68"
+    },
+    {
+        "Use Case Name": "Critical Sensitive Alert (Billing Data Log)",
+        "Use Case Title": "GCS53 Push Billing Data Log as an Alert",
+        "Code": "GCS53"
+    },
+    {
+        "Use Case Name": "Set Clock",
+        "Use Case Title": "ECS70 Set Clock on ESME",
+        "Code": "ECS70"
+    },
+    {
+        "Use Case Name": "Supply Outage Restore Alert from ESME",
+        "Use Case Title": "ECS80 Supply Outage Restore Alert from ESME",
+        "Code": "ECS80"
+    },
+    {
+        "Use Case Name": "Set Supply Tamper State on ESME",
+        "Use Case Title": "ECS81 Set Supply Tamper State on ESME",
+        "Code": "ECS81"
+    },
+    {
+        "Use Case Name": "Read Meter Balance for Smart Meter",
+        "Use Case Title": "ECS82 Read Meter Balance for ESME",
+        "Code": "ECS82"
+    },
+    {
+        "Use Case Name": "Read Meter Balance for Smart Meter",
+        "Use Case Title": "GCS60 Read Meter Balance for GSME",
+        "Code": "GCS60"
+    },
+    {
+        "Use Case Name": "Set CV and Conversion Factor Value(s) on the GSME",
+        "Use Case Title": "GCS23 Set CV and Conversion Factor Value(s) on the GSME",
+        "Code": "GCS23"
+    },
+    {
+        "Use Case Name": "Apply Prepayment Top Up to GSME (using PPMID)",
+        "Use Case Title": "PCS01 Apply Prepayment Top Up to a GSME using PPMID",
+        "Code": "PCS01"
+    },
+    {
+        "Use Case Name": "Activate Emergency Credit on GSME from PPMID",
+        "Use Case Title": "PCS02 Activate Emergency Credit on GSME from PPMID",
+        "Code": "PCS02"
+    },
+    {
+        "Use Case Name": "Read Voltage Operational Data - 3 phase",
+        "Use Case Title": "ECS23b Read Voltage Operational Data -3 Phase",
+        "Code": "ECS23b"
+    },
+    {
+        "Use Case Name": "Read Tariff Data - second element",
+        "Use Case Title": "ECS24b Read ESME Tariff Data - second element",
+        "Code": "ECS24b"
+    },
+    {
+        "Use Case Name": "Set Clock",
+        "Use Case Title": "GCS28 Set Clock on GSME",
+        "Code": "GCS28"
+    },
+    {
+        "Use Case Name": "Clear Auxiliary Controller Event Log",
+        "Use Case Title": "ECS15c Clear Auxiliary Controller Event Log",
+        "Code": "ECS15c"
+    },
+    {
+        "Use Case Name": "Set Price - Second Element",
+        "Use Case Title": "ECS01d Set Price on ESME secondary",
+        "Code": "ECS01d"
+    },
+    {
+        "Use Case Name": "Adjust Meter Balance",
+        "Use Case Title": "ECS04a Adjust Meter Balance on the ESME",
+        "Code": "ECS04a"
+    },
+    {
+        "Use Case Name": "Adjust Meter Balance: Reset",
+        "Use Case Title": "ECS04b Reset Meter Balance on the ESME",
+        "Code": "ECS04b"
+    },
+    {
+        "Use Case Name": "Set Voltage Configurations on ESME without counter reset",
+        "Use Case Title": "ECS29c Set Voltage Configurations on ESME without counter reset",
+        "Code": "ECS29c"
+    },
+    {
+        "Use Case Name": "Set Voltage Configurations on polyphase ESME without counter reset",
+        "Use Case Title": "ECS29d Set Voltage Configurations on polyphase ESME without counter reset",
+        "Code": "ECS29d"
+    },
+    {
+        "Use Case Name": "Reset RMS Voltage Counters on ESME",
+        "Use Case Title": "ECS29e Reset RMS Voltage Counters on ESME",
+        "Code": "ECS29e"
+    },
+    {
+        "Use Case Name": "Reset RMS Voltage Counters on polyphase ESME",
+        "Use Case Title": "ECS29f Reset RMS Voltage Counters on polyphase ESME",
+        "Code": "ECS29f"
+    },
+    {
+        "Use Case Name": "Read CHF Sub GHz Channel",
+        "Use Case Title": "DBCH01 Read CHF Sub GHz Channel",
+        "Code": "DBCH01"
+    },
+    {
+        "Use Case Name": "Read CHF Sub GHz Channel Log",
+        "Use Case Title": "DBCH02 Read CHF Sub GHz Channel Log",
+        "Code": "DBCH02"
+    },
+    {
+        "Use Case Name": "Read CHF Sub GHz Configuration",
+        "Use Case Title": "DBCH03 Read CHF Sub GHz Configuration",
+        "Code": "DBCH03"
+    },
+    {
+        "Use Case Name": "Set CHF Sub GHz Configuration",
+        "Use Case Title": "DBCH04 Set CHF Sub GHz Configuration",
+        "Code": "DBCH04"
+    },
+    {
+        "Use Case Name": "Request CHF Sub GHz Channel Scan",
+        "Use Case Title": "DBCH05 Request CHF Sub GHz Channel Scan",
+        "Code": "DBCH05"
+    },
+    {
+        "Use Case Name": "Read CHF device log and check HAN communications",
+        "Use Case Title": "CCS06 Read CHF device log and check HAN communications",
+        "Code": "CCS06"
+    },
+    {
+        "Use Case Name": "Limited Duty Cycle Action Taken Sub GHz Alert",
+        "Use Case Title": "DBCH06 Limited Duty Cycle Action Taken Sub GHz Alert",
+        "Code": "DBCH06"
+    },
+    {
+        "Use Case Name": "Sub GHz Sub GHz Channel Changed Sub GHz Alert",
+        "Use Case Title": "DBCH07 Sub GHz Sub GHz Channel Changed Sub GHz Alert",
+        "Code": "DBCH07"
+    },
+    {
+        "Use Case Name": "Sub GHz Channel Scan Request Assessment Outcome Sub GHz Alert",
+        "Use Case Title": "DBCH08 Sub GHz Channel Scan Request Assessment Outcome Sub GHz Alert",
+        "Code": "DBCH08"
+    },
+    {
+        "Use Case Name": "Sub GHz Configuration Changed Sub GHz Alert",
+        "Use Case Title": "DBCH09 Sub GHz Configuration Changed Sub GHz Alert",
+        "Code": "DBCH09"
+    },
+    {
+        "Use Case Name": "Message Discarded Due to Duty Cycle Management Sub GHz Alert",
+        "Use Case Title": "DBCH10 Message Discarded Due to Duty Cycle Management Sub GHz Alert",
+        "Code": "DBCH10"
+    },
+    {
+        "Use Case Name": "No More Sub GHz Device Capacity Sub GHz Alert",
+        "Use Case Title": "DBCH11 No More Sub GHz Device Capacity Sub GHz Alert",
+        "Code": "DBCH11"
+    },
+    {
+        "Use Case Name": "Update Prepayment Configuration",
+        "Use Case Title": "ECS08a Update Prepayment Configuration on ESME",
+        "Code": "ECS08a"
+    },
+    {
+        "Use Case Name": "Update Prepayment Configuration",
+        "Use Case Title": "GCS05 Update Prepayment Configurations on GSME",
+        "Code": "GCS05"
+    },
+    {
+        "Use Case Name": "Set Event  Behaviours to HAN Device - Supplier",
+        "Use Case Title": "ECS25a1 Set Event Behaviours - ESME to HAN Device - Supplier",
+        "Code": "ECS25a"
+    },
+    {
+        "Use Case Name": "Set Event  Behaviours audible alarm - Supplier",
+        "Use Case Title": "ECS25a2 Set Event Behaviours - ESME audible alarm - Supplier",
+        "Code": "ECS25a"
+    },
+    {
+        "Use Case Name": "Set Event  Behaviours logging - Supplier",
+        "Use Case Title": "ECS25a3 Set Event Behaviours - ESME logging - Supplier",
+        "Code": "ECS25a"
+    },
+    {
+        "Use Case Name": "Set Event  Behaviours logging - Network Operator",
+        "Use Case Title": "ECS25b3 Set Event Behaviours - ESME logging - Network Operator",
+        "Code": "ECS25b"
+    },
+    {
+        "Use Case Name": "Read non-critical event and alert behaviours - Supplier",
+        "Use Case Title": "ECS25r1 Read non-critical event and alert behaviours - ESME-  Supplier",
+        "Code": "ECS25r"
+    },
+    {
+        "Use Case Name": "Read non-critical event and alert behaviours - Supplier",
+        "Use Case Title": "GCS20r Read non-critical event and alert behaviours - GSME-  Supplier",
+        "Code": "GCS20r"
+    },
+    {
+        "Use Case Name": "Read non-critical event and alert behaviours - Network Operator",
+        "Use Case Title": "ECS25r2 Read non-critical event and alert behaviours - ESME-  Network Operator",
+        "Code": "ECS25r"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Smart Meter identity and type, including supply tamper / depletion state )",
+        "Use Case Title": "ECS26m Read ESME Configuration Data Device Information (identity,  type and supply tamper state)",
+        "Code": "ECS26m"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Smart Meter identity and type, including supply tamper / depletion state )",
+        "Use Case Title": "GCS21m Read GSME Configuration Data Device Information (identity, type and supply tamper / depletion state)",
+        "Code": "GCS21m"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (CH identity and type)",
+        "Use Case Title": "ECS26n Read CHF Configuration Data Device Information (CH identity and type)",
+        "Code": "ECS26n"
+    },
+    {
+        "Use Case Name": "Set Billing Calendar",
+        "Use Case Title": "GCS25 Set Billing Calendar on the GSME",
+        "Code": "GCS25"
+    },
+    {
+        "Use Case Name": "Set Billing Calendar - all periodicities",
+        "Use Case Title": "ECS30a Set Billing Calendar on the ESME - all periodicities",
+        "Code": "ECS30a"
+    },
+    {
+        "Use Case Name": "Set Billing Calendar - all periodicities",
+        "Use Case Title": "GCS25a Set Billing Calendar on the GSME - all periodicities",
+        "Code": "GCS25a"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Billing Calendar)",
+        "Use Case Title": "ECS26l Read ESME Configuration Data Device Information (Billing Calendar - all periodicities)",
+        "Code": "ECS26l"
+    },
+    {
+        "Use Case Name": "Read Configuration Data Device Information (Billing Calendar)",
+        "Use Case Title": "GCS21k Read GSME Configuration Data Device Information (BillingCalendar - all periodicities)",
+        "Code": "GCS21k"
+    },
+    {
+        "Use Case Name": "Configure daily resetting of Tariff Block Counter Matrix",
+        "Use Case Title": "ECS48 Configure daily resetting of Tariff Block Counter Matrix",
+        "Code": "ECS48"
+    },
+    {
+        "Use Case Name": "Apply Prepayment Top Up to ESME (using PPMID)",
+        "Use Case Title": "PECS01 Apply Prepayment Top Up to an ESME using PPMID",
+        "Code": "PECS01"
+    },
+    {
+        "Use Case Name": "Activate Emergency Credit on ESME from PPMID",
+        "Use Case Title": "PECS02 Activate Emergency Credit on ESME from PPMID",
+        "Code": "PECS02"
+    },
+    {
+        "Use Case Name": "Request to Enable ESME Supply from PPMID",
+        "Use Case Title": "PECS03 Request to Enable ESME Supply from PPMID",
+        "Code": "PECS03"
+    },
+    {
+        "Use Case Name": "Request Control of HCALCS [n]",
+        "Use Case Title": "HECS01 Request Control of HCALCS [n]",
+        "Code": "HECS01"
+    },
+    {
+        "Use Case Name": "Read CHF Device Logs",
+        "Use Case Title": "CCS07 Read CHF Device Logs",
+        "Code": "CCS07"
+    },
+    {
+        "Use Case Name": "Set Uncontrolled Gas Flow Rate and Supply Tamper State on the GSME",
+        "Use Case Title": "GCS24a Set Uncontrolled Gas Flow Rate at greater resolution and Supply Tamper State on the GSME",
+        "Code": "GCS24a"
+    },
+    {
+        "Use Case Name": "Read Auxiliary Controller Event Log",
+        "Use Case Title": "ECS35g Read Auxiliary Controller Event Log",
+        "Code": "ECS35g"
+    },
+    {
+        "Use Case Name": "Set Auxiliary Controller Calendar",
+        "Use Case Title": "ECS46d Set Auxiliary Controller Calendar",
+        "Code": "ECS46d"
+    },
+    {
+        "Use Case Name": "Provide Security Credential Details (ESME and SAPC)",
+        "Use Case Title": "CS02f Provide Security Credential Details",
+        "Code": "CS02f"
+    },
+    {
+        "Use Case Name": "Update Load Controller Security Credentials",
+        "Use Case Title": "CS02g Update Load Controller Security Credentials",
+        "Code": "CS02g"
+    },
+    {
+        "Use Case Name": "Command not supported by Device",
+        "Use Case Title": "ECS100 Command not supported by Device",
+        "Code": "ECS100"
+    },
+    {
+        "Use Case Name": "Limit APC [n] Level Command processed",
+        "Use Case Title": "ECS101 Limit APC [n] Level Command processed",
+        "Code": "ECS101"
+    },
+    {
+        "Use Case Name": "Limit APC [n] Level ended or cancelled",
+        "Use Case Title": "ECS102 Limit APC [n] Level ended or cancelled",
+        "Code": "ECS102"
+    },
+    {
+        "Use Case Name": "Read Auxiliary Controller Configuration Data",
+        "Use Case Title": "ECS61d Read Auxiliary Controller Configuration Data",
+        "Code": "ECS61d"
+    },
+    {
+        "Use Case Name": "Read Auxiliary Controller Operational Data",
+        "Use Case Title": "ECS61e Read Auxiliary Controller Operational Data",
+        "Code": "ECS61e"
+    },
+    {
+        "Use Case Name": "Set Auxiliary Controller [n] State",
+        "Use Case Title": "ECS47a Set Auxiliary Controller [n] State",
+        "Code": "ECS47a"
+    },
+    {
+        "Use Case Name": "Limit APC [n] Level",
+        "Use Case Title": "ECS47e Limit APC [n] Level",
+        "Code": "ECS47e"
+    },
+    {
+        "Use Case Name": "Operational Update",
+        "Use Case Title": "ECS200 Operational Update",
+        "Code": "ECS200"
+    },
+    {
+        "Use Case Name": "Firmware Transfer Alert",
+        "Use Case Title": "CCS08 Firmware Transfer Alert",
+        "Code": "CCS08"
+    },
+    {
+        "Use Case Name": "Read PPMID/HCALCS Firmware Version",
+        "Use Case Title": "CS08 Read PPMID/HCALCS Firmware Version",
+        "Code": "CS08"
+    },
+    {
+        "Use Case Name": "Distribute Firmware to PPMID",
+        "Use Case Title": "CS05c Distribute Firmware to PPMID",
+        "Code": "CS05c"
+    },
+    {
+        "Use Case Name": "PPMID Firmware Activation Alert",
+        "Use Case Title": "CS09 PPMID Firmware Activation Alert",
+        "Code": "CS09"
+    }
+]

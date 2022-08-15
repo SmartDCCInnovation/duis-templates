@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.1">
+  <sr:Header>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A1:1000</sr:RequestID>
+    <sr:CommandVariant>4</sr:CommandVariant>
+    <sr:ServiceReference>2.1</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>2.1</sr:ServiceReferenceVariant>
+  </sr:Header>
+  <sr:Body>
+    <sr:UpdatePrepayConfiguration>
+      <sr:UpdatePrepayConfigGas>
+        <sr:DebtRecoveryRateCap>100000</sr:DebtRecoveryRateCap>
+        <sr:EmergencyCreditLimit>10000000</sr:EmergencyCreditLimit>
+        <sr:EmergencyCreditThreshold>100000</sr:EmergencyCreditThreshold>
+        <sr:LowCreditThreshold>5000000</sr:LowCreditThreshold>
+        <sr:GasNonDisablementCalendar>
+          <sr:DayProfiles>
+            <sr:GasNonDisablementDayProfile>
+              <sr:TimeStartAction>
+                <sr:StartTime>00:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>START</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:TimeStartAction>
+                <sr:StartTime>08:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>STOP</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:TimeStartAction>
+                <sr:StartTime>18:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>START</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:GasDayName>1</sr:GasDayName>
+            </sr:GasNonDisablementDayProfile>
+            <sr:GasNonDisablementDayProfile>
+              <sr:TimeStartAction>
+                <sr:StartTime>00:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>START</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:TimeStartAction>
+                <sr:StartTime>07:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>STOP</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:TimeStartAction>
+                <sr:StartTime>17:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>START</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:GasDayName>2</sr:GasDayName>
+            </sr:GasNonDisablementDayProfile>
+            <sr:GasNonDisablementDayProfile>
+              <sr:TimeStartAction>
+                <sr:StartTime>00:00:00.00Z</sr:StartTime>
+                <sr:NonDisablementAction>START</sr:NonDisablementAction>
+              </sr:TimeStartAction>
+              <sr:GasDayName>3</sr:GasDayName>
+            </sr:GasNonDisablementDayProfile>
+          </sr:DayProfiles>
+          <sr:WeekProfiles>
+            <sr:WeekProfile>
+              <sr:WeekName>1</sr:WeekName>
+              <sr:ReferencedDayName index="1">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="2">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="3">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="4">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="5">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="6">3</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="7">3</sr:ReferencedDayName>
+            </sr:WeekProfile>
+            <sr:WeekProfile>
+              <sr:WeekName>2</sr:WeekName>
+              <sr:ReferencedDayName index="1">2</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="2">2</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="3">2</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="4">2</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="5">2</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="6">3</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="7">3</sr:ReferencedDayName>
+            </sr:WeekProfile>
+          </sr:WeekProfiles>
+          <sr:SeasonProfiles>
+            <sr:Season>
+              <sr:SeasonStartDate>
+                <sr:GasYearWithWildcards>
+                  <sr:SpecifiedYear>2014</sr:SpecifiedYear>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>10</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>27</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:SeasonStartDate>
+              <sr:ReferencedWeekName>1</sr:ReferencedWeekName>
+            </sr:Season>
+            <sr:Season>
+              <sr:SeasonStartDate>
+                <sr:GasYearWithWildcards>
+                  <sr:SpecifiedYear>2015</sr:SpecifiedYear>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>03</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>29</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:SeasonStartDate>
+              <sr:ReferencedWeekName>2</sr:ReferencedWeekName>
+            </sr:Season>
+          </sr:SeasonProfiles>
+          <sr:SpecialDays>
+            <sr:SpecialDay>
+              <sr:Date>
+                <sr:GasYearWithWildcards>
+                  <sr:SpecifiedYear>2015</sr:SpecifiedYear>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>04</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>05</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:Date>
+              <sr:ReferencedDayName>1</sr:ReferencedDayName>
+            </sr:SpecialDay>
+            <sr:SpecialDay>
+              <sr:Date>
+                <sr:GasYearWithWildcards>
+                  <sr:SpecifiedYear>2015</sr:SpecifiedYear>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>08</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>31</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:Date>
+              <sr:ReferencedDayName>2</sr:ReferencedDayName>
+            </sr:SpecialDay>
+            <sr:SpecialDay>
+              <sr:Date>
+                <sr:GasYearWithWildcards>
+                  <sr:NonSpecifiedYear/>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>1</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>1</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:Date>
+              <sr:ReferencedDayName>3</sr:ReferencedDayName>
+            </sr:SpecialDay>
+            <sr:SpecialDay>
+              <sr:Date>
+                <sr:GasYearWithWildcards>
+                  <sr:NonSpecifiedYear/>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>12</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>25</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:Date>
+              <sr:ReferencedDayName>1</sr:ReferencedDayName>
+            </sr:SpecialDay>
+          </sr:SpecialDays>
+        </sr:GasNonDisablementCalendar>
+        <sr:MaxMeterBalance>25000000</sr:MaxMeterBalance>
+        <sr:MaxCreditThreshold>25000000</sr:MaxCreditThreshold>
+      </sr:UpdatePrepayConfigGas>
+    </sr:UpdatePrepayConfiguration>
+  </sr:Body>
+  <ds:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <!-- NOTE: The digest, signature and serial number values below are placeholders and should not be used for actual authentication purposes. -->
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"/>
+      <ds:Reference URI="">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>ZGVmYXVsdA==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>ZGVmYXVsdA==</ds:SignatureValue>
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>CN=U1, OU=07</ds:X509IssuerName>
+          <ds:X509SerialNumber>1234567890</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+      </ds:X509Data>
+    </ds:KeyInfo>
+  </ds:Signature>
+</sr:Request>

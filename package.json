@@ -1,0 +1,53 @@
+{
+  "name": "@smartdcc/duis-templates",
+  "version": "0.0.1",
+  "description": "Collection of DUIS templates from RTDS along with utility functions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "prebuild": "del dist/**/*",
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartDCCInnovation/duis-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SmartDCCInnovation/duis-templates/issues"
+  },
+  "homepage": "https://github.com/SmartDCCInnovation/duis-templates#readme",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": {
+    "name": "Karim Kanso",
+    "email": "Karim.Kanso@smartdcc.co.uk"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.7.3",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.8",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@types/glob": "^7.2.0",
+    "fuse.js": "^6.6.2",
+    "glob": "^8.0.3"
+  }
+}

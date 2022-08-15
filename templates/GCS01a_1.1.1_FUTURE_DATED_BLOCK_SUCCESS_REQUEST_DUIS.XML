@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.1">
+  <sr:Header>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A1:1005</sr:RequestID>
+    <sr:CommandVariant>4</sr:CommandVariant>
+    <sr:ServiceReference>1.1</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>1.1.1</sr:ServiceReferenceVariant>
+  </sr:Header>
+  <sr:Body>
+    <sr:UpdateImportTariffPrimaryElement>
+      <sr:ExecutionDateTime>2030-01-15T09:00:00.00Z</sr:ExecutionDateTime>
+      <sr:GasTariffElements>
+        <sr:SwitchingTable>
+          <sr:DayProfiles>
+            <sr:DayProfile>
+              <sr:DayName>1</sr:DayName>
+              <sr:BlockTariff/>
+            </sr:DayProfile>
+          </sr:DayProfiles>
+          <sr:WeekProfiles>
+            <sr:WeekProfile>
+              <sr:WeekName>1</sr:WeekName>
+              <sr:ReferencedDayName index="1">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="2">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="3">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="4">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="5">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="6">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="7">1</sr:ReferencedDayName>
+            </sr:WeekProfile>
+          </sr:WeekProfiles>
+          <sr:Seasons>
+            <sr:Season>
+              <sr:SeasonStartDate>
+                <sr:GasYearWithWildcards>
+                  <sr:NonSpecifiedYear/>
+                </sr:GasYearWithWildcards>
+                <sr:GasMonthWithWildcards>
+                  <sr:SpecifiedMonth>3</sr:SpecifiedMonth>
+                </sr:GasMonthWithWildcards>
+                <sr:GasDayOfMonthWithWildcards>
+                  <sr:SpecifiedDayOfMonth>20</sr:SpecifiedDayOfMonth>
+                </sr:GasDayOfMonthWithWildcards>
+                <sr:GasDayOfWeekWithWildcards>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:GasDayOfWeekWithWildcards>
+              </sr:SeasonStartDate>
+              <sr:ReferencedWeekName>1</sr:ReferencedWeekName>
+            </sr:Season>
+          </sr:Seasons>
+        </sr:SwitchingTable>
+        <sr:SpecialDays/>
+        <sr:ThresholdMatrix>
+          <sr:BlockThreshold index="1">1000000</sr:BlockThreshold>
+          <sr:BlockThreshold index="2">2000000</sr:BlockThreshold>
+          <sr:BlockThreshold index="3">3000000</sr:BlockThreshold>
+        </sr:ThresholdMatrix>
+      </sr:GasTariffElements>
+      <sr:PriceElements>
+        <sr:GasPriceElements>
+          <sr:CurrencyUnits>GBP</sr:CurrencyUnits>
+          <sr:StandingCharge>54794</sr:StandingCharge>
+          <sr:BlockTariff>
+            <sr:BlockPrice index="1">9600</sr:BlockPrice>
+            <sr:BlockPrice index="2">10200</sr:BlockPrice>
+            <sr:BlockPrice index="3">10750</sr:BlockPrice>
+            <sr:BlockPrice index="4">11000</sr:BlockPrice>
+            <sr:NumberOfThresholds>2</sr:NumberOfThresholds>
+          </sr:BlockTariff>
+        </sr:GasPriceElements>
+      </sr:PriceElements>
+    </sr:UpdateImportTariffPrimaryElement>
+  </sr:Body>
+  <ds:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <!-- NOTE: The digest, signature and serial number values below are placeholders and should not be used for actual authentication purposes. -->
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"/>
+      <ds:Reference URI="">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>ZGVmYXVsdA==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>ZGVmYXVsdA==</ds:SignatureValue>
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>CN=U1, OU=07</ds:X509IssuerName>
+          <ds:X509SerialNumber>1234567890</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+      </ds:X509Data>
+    </ds:KeyInfo>
+  </ds:Signature>
+</sr:Request>

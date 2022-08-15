@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.1">
+  <sr:Header>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A0:1007</sr:RequestID>
+    <sr:CommandVariant>4</sr:CommandVariant>
+    <sr:ServiceReference>1.1</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>1.1.1</sr:ServiceReferenceVariant>
+  </sr:Header>
+  <sr:Body>
+    <sr:UpdateImportTariffPrimaryElement>
+      <sr:ElecTariffElements>
+        <sr:CurrencyUnits>GBP</sr:CurrencyUnits>
+        <sr:SwitchingTable>
+          <sr:DayProfiles>
+            <sr:DayProfile>
+              <sr:DayName>1</sr:DayName>
+              <sr:ProfileSchedule>
+                <sr:StartTime>00:00:00.00Z</sr:StartTime>
+                <sr:BlockTariffAction>1</sr:BlockTariffAction>
+              </sr:ProfileSchedule>
+            </sr:DayProfile>
+          </sr:DayProfiles>
+          <sr:WeekProfiles>
+            <sr:WeekProfile>
+              <sr:WeekName>1</sr:WeekName>
+              <sr:ReferencedDayName index="1">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="2">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="3">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="4">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="5">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="6">1</sr:ReferencedDayName>
+              <sr:ReferencedDayName index="7">1</sr:ReferencedDayName>
+            </sr:WeekProfile>
+          </sr:WeekProfiles>
+          <sr:Seasons>
+            <sr:Season>
+              <sr:SeasonName>all</sr:SeasonName>
+              <sr:SeasonStartDate>
+                <sr:Year>
+                  <sr:SpecifiedYear>2015</sr:SpecifiedYear>
+                </sr:Year>
+                <sr:Month>
+                  <sr:SpecifiedMonth>01</sr:SpecifiedMonth>
+                </sr:Month>
+                <sr:DayOfMonth>
+                  <sr:SpecifiedDayOfMonth>01</sr:SpecifiedDayOfMonth>
+                </sr:DayOfMonth>
+                <sr:DayOfWeek>
+                  <sr:NonSpecifiedDayOfWeek/>
+                </sr:DayOfWeek>
+              </sr:SeasonStartDate>
+              <sr:ReferencedWeekName>1</sr:ReferencedWeekName>
+            </sr:Season>
+          </sr:Seasons>
+        </sr:SwitchingTable>
+        <sr:SpecialDays/>
+        <sr:ThresholdMatrix>
+          <sr:Thresholds index="1">
+            <sr:BlockThreshold index="1">10000</sr:BlockThreshold>
+            <sr:BlockThreshold index="2">20000</sr:BlockThreshold>
+            <sr:BlockThreshold index="3">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="2">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="3">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="4">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="5">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="6">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="7">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+          <sr:Thresholds index="8">
+            <sr:BlockThreshold index="1">4294967295</sr:BlockThreshold>
+          </sr:Thresholds>
+        </sr:ThresholdMatrix>
+      </sr:ElecTariffElements>
+      <sr:PriceElements>
+        <sr:ElectricityPriceElements>
+          <sr:StandingCharge>20000</sr:StandingCharge>
+          <sr:StandingChargeScale>-5</sr:StandingChargeScale>
+          <sr:PriceScale>-5</sr:PriceScale>
+          <sr:BlockTariff>
+            <sr:BlockPrices index="1">
+              <sr:BlockPrice index="1">1361</sr:BlockPrice>
+              <sr:BlockPrice index="2">2289</sr:BlockPrice>
+              <sr:BlockPrice index="3">5566</sr:BlockPrice>
+            </sr:BlockPrices>
+          </sr:BlockTariff>
+        </sr:ElectricityPriceElements>
+      </sr:PriceElements>
+    </sr:UpdateImportTariffPrimaryElement>
+  </sr:Body>
+  <ds:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <!-- NOTE: The digest, signature and serial number values below are placeholders and should not be used for actual authentication purposes. -->
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"/>
+      <ds:Reference URI="">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>ZGVmYXVsdA==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>ZGVmYXVsdA==</ds:SignatureValue>
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509IssuerSerial>
+          <ds:X509IssuerName>CN=U1, OU=07</ds:X509IssuerName>
+          <ds:X509SerialNumber>1234567890</ds:X509SerialNumber>
+        </ds:X509IssuerSerial>
+      </ds:X509Data>
+    </ds:KeyInfo>
+  </ds:Signature>
+</sr:Request>
