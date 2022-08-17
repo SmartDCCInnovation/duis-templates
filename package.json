@@ -24,7 +24,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "templates"
   ],
   "author": {
     "name": "Karim Kanso",
