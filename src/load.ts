@@ -121,7 +121,11 @@ export type TemplateDirectory = Record<string, Template>
 export async function loadTemplates(
   options: LoadTemplateOptions
 ): Promise<TemplateDirectory> {
-  const logger = options.logger ?? (() => {})
+  const logger =
+    options.logger ??
+    ((): void => {
+      /* do nothing */
+    })
   const templates = await new Promise<string[]>((a, r) =>
     glob(
       resolve(
