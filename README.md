@@ -3,6 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Tests](https://github.com/SmartDCCInnovation/duis-templates/actions/workflows/node.yml/badge.svg?branch=main&event=push)](https://github.com/SmartDCCInnovation/duis-templates/actions/workflows/node.yml)
 [![codecov](https://codecov.io/gh/SmartDCCInnovation/duis-templates/branch/main/graph/badge.svg?token=1FGAXZ5OS6)](https://codecov.io/gh/SmartDCCInnovation/duis-templates)
+[![GitHub version](https://badge.fury.io/gh/SmartDCCInnovation%2Fduis-templates.svg)](https://badge.fury.io/gh/SmartDCCInnovation%2Fduis-templates)
 
 Provides a number of DUIS templates intended for use with [DCC Boxed][boxed].
 The templates originate from the Reference Test Data Set project. Conversion of
@@ -13,7 +14,11 @@ Case*, *Service Request Variant*, *Service Request Name*.
 
 ## Usage
 
-Developed using typescript with `node 16`.
+Developed and tested against `node 16`. Install from `npm`:
+
+```
+npm i @smartdcc/duis-templates
+```
 
 ### Load Templates
 
