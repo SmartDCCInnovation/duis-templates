@@ -1,5 +1,9 @@
 # DUIS Templates
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Tests](https://github.com/SmartDCCInnovation/duis-templates/actions/workflows/node.yml/badge.svg?branch=main&event=push)](https://github.com/SmartDCCInnovation/duis-templates/actions/workflows/node.yml)
+[![codecov](https://codecov.io/gh/SmartDCCInnovation/duis-templates/branch/main/graph/badge.svg?token=1FGAXZ5OS6)](https://codecov.io/gh/SmartDCCInnovation/duis-templates)
+
 Provides a number of DUIS templates intended for use with [DCC Boxed][boxed].
 The templates originate from the Reference Test Data Set project. Conversion of
 the templates from `XML` into `JSON` is managed by the
@@ -167,6 +171,24 @@ Which could output the following:
 The structure of the result set is described in the Fuse.js documentation. Of
 interest, the `matches` item shows which key in the Template was matched and the
 position in the string too.
+
+## Contributing
+
+Contributions are welcome!
+
+When submitting a pull request, please ensure:
+
+  1. Each PR is concise and provides only one feature/bug fix.
+  2. Unit test are provided to cover feature. The project uses `jest`. To test,
+     run `npm run test:cov` to view code coverage metrics.
+  3. Bugfixes are reference the GitHub issue.
+  4. If appropriate, update documentation.
+  5. Before committing, run `npm run lint` and `npm run prettier-check`.
+
+If you are planning a new non-trivial feature, please first raise a GitHub issue
+to discuss it to before investing your time to avoid disappointment.
+
+Any contributions will be expected to be licensable under GPLv3.
 
 ## Other Info
 
