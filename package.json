@@ -1,6 +1,6 @@
 {
   "name": "@smartdcc/duis-templates",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Collection of DUIS templates from RTDS along with utility functions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
