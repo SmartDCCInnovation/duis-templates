@@ -11,7 +11,9 @@
     "test:cov": "jest --coverage",
     "prebuild": "del dist/**/*",
     "build": "tsc",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "lint": "eslint src/",
+    "prettier-check": "prettier -c  \"src/**/*.{css,html,ts,json,md,yaml,yml}\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,8 @@
     "@types/glob": "^8.0.0",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.7.3",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "del-cli": "^5.0.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
