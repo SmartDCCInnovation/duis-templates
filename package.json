@@ -55,5 +55,13 @@
     "@smartdcc/duis-parser": "^0.1.1",
     "fuse.js": "^6.6.2",
     "glob": "^8.0.3"
-  }
+  },
+  "keywords": [
+    "duis",
+    "backend",
+    "smartdcc",
+    "smartmeter",
+    "smets2",
+    "xml"
+  ]
 }
