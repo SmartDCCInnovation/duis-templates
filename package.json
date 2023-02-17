@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "prebuild": "del dist/**/*",
+    "prebuild": "del-cli dist/**/*",
     "build": "tsc",
     "prepack": "npm run build",
     "lint": "eslint src/",

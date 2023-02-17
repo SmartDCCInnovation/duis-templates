@@ -29,6 +29,7 @@ import glob from 'glob'
 import { basename, resolve } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import mappingTable from './gbcs-mapping-table.json'
+import { join } from 'node:path'
 
 export interface Template {
   fileName: string
@@ -132,8 +133,9 @@ export async function loadTemplates(
         ...(options.path
           ? [options.path]
           : [__dirname, '..', 'templates']
-        ).concat('**/*_REQUEST_DUIS.XML')
+        ).concat(join('**', '*_REQUEST_DUIS.XML'))
       ),
+      { windowsPathsNoEscape: true },
       (err, m) => (err ? r(err) : a(m))
     )
   )
