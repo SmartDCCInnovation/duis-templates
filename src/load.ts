@@ -127,17 +127,14 @@ export async function loadTemplates(
     ((): void => {
       /* do nothing */
     })
-  const templates = await new Promise<string[]>((a, r) =>
-    glob(
-      resolve(
-        ...(options.path
-          ? [options.path]
-          : [__dirname, '..', 'templates']
-        ).concat(join('**', '*_REQUEST_DUIS.XML'))
-      ),
-      { windowsPathsNoEscape: true },
-      (err, m) => (err ? r(err) : a(m))
-    )
+  const templates = await glob(
+    resolve(
+      ...(options.path
+        ? [options.path]
+        : [__dirname, '..', 'templates']
+      ).concat(join('**', '*_REQUEST_DUIS.XML'))
+    ),
+    { windowsPathsNoEscape: true }
   )
 
   const zz = (
