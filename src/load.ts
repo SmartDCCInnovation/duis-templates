@@ -48,6 +48,15 @@ export function parseFileTag(tag: string): RegExpMatchArray | null {
   )
 }
 
+export interface GBCSRecord {
+  'Use Case Name': string
+  'Use Case Title': string
+}
+
+export function lookupGBCS(code: string): GBCSRecord | undefined {
+  return mappingTable.find((e) => e.Code === code)
+}
+
 export async function loadTemplate(
   logger: (msg: string) => void,
   fileName: string
@@ -71,9 +80,7 @@ export async function loadTemplate(
   }
   let gbcsTitle: string | undefined = undefined
   if (groups.groups?.['gbcs']) {
-    const gbcsRecord = mappingTable.find(
-      (e) => e.Code === groups.groups?.['gbcs']
-    )
+    const gbcsRecord = lookupGBCS(groups.groups?.['gbcs'])
     if (gbcsRecord) {
       gbcsTitle = gbcsRecord['Use Case Title']
     } else {

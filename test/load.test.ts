@@ -330,3 +330,20 @@ describe('loadTemplates', () => {
     await expect(load.loadTemplates({})).resolves.toBeInstanceOf(Object)
   })
 })
+
+describe('lookupGBCS', () => {
+  test('defined', () => {
+    expect(load.lookupGBCS).toBeDefined()
+  })
+
+  test('invalid-code', () => {
+    expect(load.lookupGBCS('asdf')).toBeUndefined()
+  })
+
+  test('nominal', () => {
+    expect(load.lookupGBCS('ECS17b')).toMatchObject({
+      'Use Case Name': 'Read Import Energy / Consumption Registers',
+      'Use Case Title': 'ECS17b Read ESME Energy Registers (Import Energy)',
+    })
+  })
+})
