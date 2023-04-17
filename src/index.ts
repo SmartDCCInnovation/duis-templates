@@ -24,4 +24,4 @@ export {
   Template,
   TemplateDirectory,
 } from './load'
-export { search } from './search'
+export { search, searchGBCS } from './search'

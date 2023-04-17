@@ -18,10 +18,13 @@
  */
 
 import Fuse from 'fuse.js'
-import { Template, TemplateDirectory } from './load'
+import { GBCSRecord, Template, TemplateDirectory } from './load'
+import mappingTable from './gbcs-mapping-table.json'
 
 /**
- * Builds a Fuse searcher instance with some default parameters set.
+ * Builds a Fuse searcher instance with some default parameters set for duis
+ * templates.
+ *
  * @param td TemplateDirectory to search
  * @param options override default options - avoid setting "keys"
  * @returns Fuse
@@ -39,6 +42,37 @@ export function search(
       '1.gbcsVariant',
       '1.gbcsTitle',
       '1.info',
+    ],
+    distance: 200,
+    threshold: 0.4,
+    includeMatches: true,
+    ...options,
+  })
+}
+
+let mapping: [string, GBCSRecord][]
+
+/**
+ * Builds a Fuse searcher instance with some default parameters set for gbcs/use
+ * cases.
+ *
+ * @param options override default options - avoid setting "keys"
+ * @returns Fuse
+ */
+export function searchGBCS(
+  options?: Fuse.IFuseOptions<[string, GBCSRecord]>
+): Fuse<[string, GBCSRecord]> {
+  if (mapping === undefined) {
+    mapping = mappingTable.map((e) => [e.Code, e])
+  }
+  return new Fuse(mapping, {
+    keys: [
+      '0',
+      '1.Use Case Name',
+      '1.Use Case Title',
+      '1.Message Type',
+      '1.Use Case Description',
+      '1.Service Reference',
     ],
     distance: 200,
     threshold: 0.4,
