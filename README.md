@@ -179,6 +179,27 @@ The structure of the result set is described in the Fuse.js documentation. Of
 interest, the `matches` item shows which key in the Template was matched and the
 position in the string too.
 
+## Lookup GBCS usecase details
+
+It is possible to map a use case code to a textual names directly without the
+service request. This is exposed as:
+
+```ts
+import { lookupGBCS } from '@smartdcc/duis-templates'
+
+console.log(lookupGBCS('ECS17b'))
+```
+
+Which might return:
+
+```js
+{
+  'Use Case Name': 'Read Import Energy / Consumption Registers',
+  'Use Case Title': 'ECS17b Read ESME Energy Registers (Import Energy)',
+  Code: 'ECS17b'
+}
+```
+
 ## Contributing
 
 Contributions are welcome!

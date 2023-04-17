@@ -17,5 +17,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export { loadTemplates, Template, TemplateDirectory } from './load'
+export {
+  loadTemplates,
+  lookupGBCS,
+  GBCSRecord,
+  Template,
+  TemplateDirectory,
+} from './load'
 export { search } from './search'
