@@ -25,7 +25,7 @@ import {
   lookupSRV,
   isSimplifiedDuisOutputRequest,
 } from '@smartdcc/duis-parser'
-import glob from 'glob'
+import { glob } from 'glob'
 import { basename, resolve } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import mappingTable from './gbcs-mapping-table.json'
