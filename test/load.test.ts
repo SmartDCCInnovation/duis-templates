@@ -344,6 +344,11 @@ describe('lookupGBCS', () => {
     expect(load.lookupGBCS('ECS17b')).toMatchObject({
       'Use Case Name': 'Read Import Energy / Consumption Registers',
       'Use Case Title': 'ECS17b Read ESME Energy Registers (Import Energy)',
+      'Message Type': 'SME.C.NC',
+      'Use Case Description':
+        'This Use Case is for reading the ESME import energy registers / GSME consumption registers.',
+      'Remote Party or HAN Message': 'Remote Party',
+      'Service Reference': '4.1',
     })
   })
 })

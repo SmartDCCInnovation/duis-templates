@@ -2,1036 +2,1864 @@
   {
     "Use Case Name": "Add Device to CHF device log",
     "Use Case Title": "CCS01 Add Device to CHF device log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case adds a Device to the 'whitelist' on the Communications Hub.\nThe 'whitelist' is called the CHF Device Log in CHTS.\nIf a Device is not on this whitelist, it cannot communicate over the HAN.\nIf a CH receives a CCS01 Command for a Device whose Device ID is already in its CHF Device Log, the CH shall discard the key parameter in the register_device method invocation without processing that parameter. For clarity, such a CCS01 Command shall not affect any Link Key held by the CH and the register_device method shall return a result of 'success' in the corresponding action-result-action. Having authenticated the Command, the CHF shall add the Device to its CHF Device Log and so send a CS14 Alert containing the updated CHF Device Log. For clarity and in line with CS14 requirements, since the CHF has not established a TC Link Key to use with the Device at this point, the value of the hashed_TC_link_key field shall be a zero-length string in this Alert.\nThe CHF shall then check whether the value in the ieee_address parameter is for a Device Entity Identifier in its CHF Historic Device Log. \nIf it is not in its CHF Historic Device Log, the CHF shall allow SMHAN joining based on the Install Code specified in the key parameter, for the period specified in the join_timeout parameter.\nIf the value in the ieee_address parameter is for a Device Entity Identifier in its CHF Historic Device Log, the CHF shall, for the first half of the period specified in the join_timeout parameter, allow communications based on the associated TC Link Key in the CHF Historic Device Log.\nIf communications with the Device using that historic TC Link Key begin within the first half of the period specified in the join_timeout parameter, the CHF shall record that historic TC Link Key against the Device's Entity Identifier in its CHF Device Log. Since this changes the CHF Device Log, the CHF shall send a CS14 Alert containing the Device's Entity Identifier and the associated Hash of this re-used TC Link Key.\nIf communications with the Device using that historic TC Link Key do not begin within the first half of the period specified in the join_timeout parameter, the CHF shall then allow SMHAN joining using the Install Code specified in the key parameter for the second half of the period specified in the join_timeout parameter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.11",
     "Code": "CCS01"
   },
   {
     "Use Case Name": "Remove device from CHF device log",
     "Use Case Title": "CCS02 Remove device from CHF device log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case removes a Device from the 'whitelist' on the Communications Hub.\nThe 'whitelist' is called the CHF Device Log in CHTS.\nIf a Device is not on this whitelist, it cannot communicate over the HAN.Where the CHF has established a TC Link Key with the Device specified in the Command, it shall, having authenticated the Command, record that TC Link Key and associated Device Entity Identifier in the CHF Historic Device Log. The CHF shall do this before removing the Device's details from the CHF Device Log, unless the Device specified in the Command is of Device Type HHT. If the Device ID is already in the CHF Historic Device Log, the CHF shall update that record with the TC Link Key for it in the CHF Device Log. If there are already 15 entries in the CHF Historic Device Log, the CHF shall overwrite the oldest entry in that log with the details of this mostly recently removed Device. For clarity, a GPF does not establish a TC Link Key with the CHF, so could never be recorded in the CHF Historic Device Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.11",
     "Code": "CCS02"
   },
   {
     "Use Case Name": "Restore CHF Device Log",
     "Use Case Title": "CCS03 Restore CHF Device Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for restoring the CHF Device Log. Refer to section 18.2. Subject to successful execution, the Communications Hub shall form a network with an Extended PAN ID set to the value (restore_PAN:restore_PAN.extended_PAN_ID) in the received Command.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.12",
     "Code": "CCS03"
   },
   {
     "Use Case Name": "Restore GPF Device Log",
     "Use Case Title": "GCS59 Restore GPF Device Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "See section 13.8.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "GCS59"
   },
   {
     "Use Case Name": "Backup GPF Device Log",
     "Use Case Title": "GCS62 Backup GPF Device Log",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "See section 13.8.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "GCS62"
   },
   {
     "Use Case Name": "Apply Prepayment Top Up",
     "Use Case Title": "CS01a Apply Prepayment Top Up to an ESME",
+    "Message Type": "SME.C.NC but with additional cryptographic processing specified in GBCS Sections 14.3.4 and 14.3.5",
+    "Use Case Description": "This Use Case enables a UTRN to be applied to a meter to top up the meter balance. See also section 14.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.2",
     "Code": "CS01a"
   },
   {
     "Use Case Name": "Apply Prepayment Top Up",
     "Use Case Title": "CS01b Apply Prepayment Top Up to a GSME",
+    "Message Type": "SME.C.NC but with additional cryptographic processing specified in GBCS Sections 14.3.4 and 14.3.5",
+    "Use Case Description": "This Use Case enables a UTRN to be applied to a meter to top up the meter balance. See also section 14.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.2",
     "Code": "CS01b"
   },
   {
     "Use Case Name": "Provide Security Credentials Details",
     "Use Case Title": "CS02a Provide Security Credentials Details",
+    "Message Type": "Variant Command & Response",
+    "Use Case Description": "See section 13.2.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS02a"
   },
   {
     "Use Case Name": "Update Security Credentials",
     "Use Case Title": "CS02b Update Security Credentials",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See section 13.3.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS02b"
   },
   {
     "Use Case Name": "Issue Security Credentials",
     "Use Case Title": "CS02c Issue Security Credentials",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.4.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS02c"
   },
   {
     "Use Case Name": "Update Device Certificates on Device",
     "Use Case Title": "CS02d Update Device Certificates on Device",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.5.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS02d"
   },
   {
     "Use Case Name": "Provide Device Certificates from Device",
     "Use Case Title": "CS02e Provide Device Certificates from Device",
+    "Message Type": "Variant Command & Response",
+    "Use Case Description": "See section 13.6.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS02e"
   },
   {
     "Use Case Name": "Method A Join (Meter)",
     "Use Case Title": "CS03A1 Method A Join (Meter)",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS03A1"
   },
   {
     "Use Case Name": "Method B Join",
     "Use Case Title": "CS03B Method B Join",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS03B"
   },
   {
     "Use Case Name": "Method A Join (non-Meter)",
     "Use Case Title": "CS03A2 Method A Join (non Meter)",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS03A2"
   },
   {
     "Use Case Name": "Method C Join",
     "Use Case Title": "CS03C Method C Join",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS03C"
   },
   {
     "Use Case Name": "Method A or C Unjoin",
     "Use Case Title": "CS04AC Method A or C Unjoin",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS04AC"
   },
   {
     "Use Case Name": "Method B Unjoin",
     "Use Case Title": "CS04B Method B Unjoin",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "See section 13.7.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS04B"
   },
   {
     "Use Case Name": "Distribute Firmware",
     "Use Case Title": "CS05a Distribute Firmware to Communications Hub",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See sections 11.3-4.",
+    "Remote Party or HAN Message": null,
+    "Service Reference": "See GBCS",
     "Code": "CS05a"
   },
   {
     "Use Case Name": "Distribute Firmware",
     "Use Case Title": "CS05b Distribute Firmware to ESME / GSME",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See sections 11.3-4.",
+    "Remote Party or HAN Message": null,
+    "Service Reference": "See GBCS",
     "Code": "CS05b"
   },
   {
     "Use Case Name": "Activate Firmware",
     "Use Case Title": "CS06 Activate Firmware",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 11.5.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS06"
   },
   {
     "Use Case Name": "Read Device Join Details",
     "Use Case Title": "CS07 Read Device Join Details",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case provides a means to identify which Devices in the HAN a Device is communicating with.\nRefer to section 13.7.4 of GBCS for processing requirements.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.9",
     "Code": "CS07"
   },
   {
     "Use Case Name": "Device Addition To / Removal From HAN Whitelist Alerts",
     "Use Case Title": "CS14 Device Addition To / Removal From HAN Whitelist Alerts",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Whenever an IEEE address is added to or removed from the CHF Device Log and whenever a Hashed TC Link Key changes in the CHF Device Log, the Communications Hub Function shall generate and send an instance of this Alert which contains a back up version of the data in the 'whitelist' (the CHF Device Log). The Alert Code shall be 0x8F12. The value of the hashed_TC_link_key field shall only be populated where the devices has established a TC link key. Where the Device has not established such a TC link key, the field sent shall be a zero length string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "CS14"
   },
   {
     "Use Case Name": "Set Tariff and Price",
     "Use Case Title": "ECS01a Set Tariff and Price on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for creating a new tariff on the Smart Meter where the initial condition of the tariff is unknown.\nIt is also used for updating existing tariffs.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.1",
     "Code": "ECS01a"
   },
   {
     "Use Case Name": "Set Tariff and Price",
     "Use Case Title": "GCS01a Set Tariff and Price on GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for creating a new tariff on the Smart Meter where the initial condition of the tariff is unknown.\nIt is also used for updating existing tariffs.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.1",
     "Code": "GCS01a"
   },
   {
     "Use Case Name": "Set Price",
     "Use Case Title": "ECS01b Set Price on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for creating a new price on the Smart Meter where the initial condition of the tariff and price is known, and therefore it can be used to update prices.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.2",
     "Code": "ECS01b"
   },
   {
     "Use Case Name": "Set Price",
     "Use Case Title": "GCS01b Set Price on GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for creating a new price on the Smart Meter where the initial condition of the tariff and price is known, and therefore it can be used to update prices.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.2",
     "Code": "GCS01b"
   },
   {
     "Use Case Name": "Set Tariff and Price - Second Element",
     "Use Case Title": "ECS01c Set Tariff and Price on ESME secondary",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for creating a new tariff for second element on the Smart Meter where the initial condition of the tariff is unknown.\nIt is also used for updating existing tariffs for second element.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.1",
     "Code": "ECS01c"
   },
   {
     "Use Case Name": "Set Payment Mode to Credit",
     "Use Case Title": "ECS02 Set ESME Payment Mode to Credit",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for converting the Smart Meter from a prepayment to credit mode.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.6",
     "Code": "ECS02"
   },
   {
     "Use Case Name": "Set Payment Mode to Credit",
     "Use Case Title": "GCS02 Set GSME Payment Mode to Credit",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for converting the Smart Meter from a prepayment to credit mode.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.6",
     "Code": "GCS02"
   },
   {
     "Use Case Name": "Set Payment Mode to Prepayment",
     "Use Case Title": "ECS03 Set ESME Payment Mode to Prepayment",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Payment Mode to prepayment",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.6",
     "Code": "ECS03"
   },
   {
     "Use Case Name": "Set Payment Mode to Prepayment",
     "Use Case Title": "GCS03 Set GSME Payment Mode to Prepayment",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Payment Mode to prepayment",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.6",
     "Code": "GCS03"
   },
   {
     "Use Case Name": "Adjust Prepayment Mode Meter Balance",
     "Use Case Title": "GCS40a Adjust Prepayment Mode Meter Balance on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for adjusting the prepayment mode meter balance on the GSME.  \nThe adjustment of this meter balance in this Use Case is an incremental/decremental adjustment, rather than an absolute setting of this meter balance.\nThe prepayment mode meter balance is held in a separate ZigBee Cluster to the credit mode meter balance.  This Use Case therefore covers GSME Prepayment only.  See GCS40c/GCS40d for interacting with the credit mode balance.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "GCS40a"
   },
   {
     "Use Case Name": "Adjust Prepayment Mode Meter Balance: Reset",
     "Use Case Title": "GCS40b Reset Prepayment Mode Meter Balance on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the prepayment mode meter balance on the GSME to Zero.\nThe prepayment mode meter balance is held in a separate ZigBee Cluster to the credit mode meter balance.  This Use Case therefore covers GSME Prepayment only.  See GCS40c/GCS40d for interacting with the credit mode balance.\nIn processing an authentic Command, the GSME shall undertake the processing required by the SMETS 'Reset Meter Balance' function.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "GCS40b"
   },
   {
     "Use Case Name": "Adjust Credit Mode Meter Balance",
     "Use Case Title": "GCS40c Adjust Credit Mode Meter Balance on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for adjusting the credit mode meter balance on the GSME.  \nThe adjustment of this meter balance in this Use Case is an incremental/decremental adjustment, rather than an absolute setting of this meter balance. This Use Case adjusts the ZSE attribute BillToDateDelivered. Consumption causes this attribute to increase, as opposed to the SMETS Meter Balance which decreases with consumption. Therefore the GSME shall subtract the adjustment provided as a parameter in this Use Case from BillToDateDelivered.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "GCS40c"
   },
   {
     "Use Case Name": "Adjust Credit Mode Meter Balance: Reset",
     "Use Case Title": "GCS40d Reset Credit Mode Meter Balance on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the credit mode meter balance on the GSME to Zero.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "GCS40d"
   },
   {
     "Use Case Name": "Reset Tariff Block Counter Matrix",
     "Use Case Title": "ECS05 Reset Tariff Block Counter Matrix",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for resetting the tariff block counter matrix on the ESME.\nThis Use Case has the effect of resetting the consumer's block consumption back to zero, such that their consumption will go back to being charged at the first block rate.\nThe ESME automatically resets its tariff block counters at the end of the block period/billing period.\nTherefore, this Use Case should be avoided in favour of forcing an end of billing period, which will reset the block counter and provide a set of register reads at the time of reset.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.7",
     "Code": "ECS05"
   },
   {
     "Use Case Name": "Debt Management",
     "Use Case Title": "ECS07 Manage Debt on the ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for managing debt for Time Debt Registers 1 and 2, and the Payment Debt Register; and configuring the debt repayments on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.3",
     "Code": "ECS07"
   },
   {
     "Use Case Name": "Debt Management",
     "Use Case Title": "GCS04 Manage Debt on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for managing debt for Time Debt Registers 1 and 2, and the Payment Debt Register; and configuring the debt repayments on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.3",
     "Code": "GCS04"
   },
   {
     "Use Case Name": "Activate Emergency Credit Remotely",
     "Use Case Title": "ECS09 Activate Emergency Credit Remotely on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for remotely activating the emergency credit on the Smart Meter. If, after the Device has executed this Command, emergency credit is activated on the Device then the Device shall return a Response indicating the Command executed successfully. This shall be so regardless of whether emergency credit was activated on the Device prior to the Command's execution or not. If, after the Device has executed this Command, Emergency Credit is not activated on the Device, then the Device shall return a Response indicating the Command did not execute successfully. In such cases, the ZSE Default Response command responding to the 'Select Available Emergency Credit' command shall report a status of  FAILURE (0x01) and the response to the DLMS COSEM 'invoke_credit' method invocation shall report a result of 'other-reason (250)'.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.5",
     "Code": "ECS09"
   },
   {
     "Use Case Name": "Activate Emergency Credit Remotely",
     "Use Case Title": "GCS06 Activate Emergency Credit Remotely on GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for remotely activating the emergency credit on the Smart Meter. If, after the Device has executed this Command, emergency credit is activated on the Device then the Device shall return a Response indicating the Command executed successfully. This shall be so regardless of whether emergency credit was activated on the Device prior to the Command's execution or not. If, after the Device has executed this Command, Emergency Credit is not activated on the Device, then the Device shall return a Response indicating the Command did not execute successfully. In such cases, the ZSE Default Response command responding to the 'Select Available Emergency Credit' command shall report a status of  FAILURE (0x01) and the response to the DLMS COSEM 'invoke_credit' method invocation shall report a result of 'other-reason (250)'.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.5",
     "Code": "GCS06"
   },
   {
     "Use Case Name": "Send Message to Meter",
     "Use Case Title": "ECS10 Send Message to ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for sending a Consumer message to the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.1",
     "Code": "ECS10"
   },
   {
     "Use Case Name": "Send Message to Meter",
     "Use Case Title": "GCS07 Send Message to GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for sending a Consumer message to the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.1",
     "Code": "GCS07"
   },
   {
     "Use Case Name": "Set Change of Tenancy date",
     "Use Case Title": "ECS12 Set Change of Tenancy date on ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting a date for a Change of Tenancy on the Device and restricting access to data based on this date.\nThe date in the Command may be in the future or in the past, and the Command will be executed on receipt.\nOnce set, the date is used by the Smart Meter to restrict the householder's access to the following information:\n- Profile data log;\n- Cumulative and Historical Value Store;\n- Daily Read Log;\n- Prepayment Daily Read Log;\n- Billing Data Log; and\n- Daily Consumption Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.2",
     "Code": "ECS12"
   },
   {
     "Use Case Name": "Set Change of Tenancy date",
     "Use Case Title": "GCS09 Set Change of Tenancy date on GPF",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting a date for a Change of Tenancy on the Device and restricting access to data based on this date.\nThe date in the Command may be in the future or in the past, and the Command will be executed on receipt.\nOnce set, the date is used by the Smart Meter to restrict the householder's access to the following information:\n- Profile data log;\n- Cumulative and Historical Value Store;\n- Daily Read Log;\n- Prepayment Daily Read Log;\n- Billing Data Log; and\n- Daily Consumption Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.2",
     "Code": "GCS09"
   },
   {
     "Use Case Name": "Disable Privacy PIN Protection",
     "Use Case Title": "ECS14 Disable Privacy PIN Protection on ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for disabling Privacy PIN protection on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.5",
     "Code": "ECS14"
   },
   {
     "Use Case Name": "Disable Privacy PIN Protection",
     "Use Case Title": "GCS11 Disable Privacy PIN Protection on GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for disabling Privacy PIN protection on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.5",
     "Code": "GCS11"
   },
   {
     "Use Case Name": "Clear Event Log",
     "Use Case Title": "ECS15a Clear ESME Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for clearing the Event Log on a Device. \nThis Use Case covers clearing the Event Log only; the Security Log is not allowed to be cleared via a remote Command.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.3",
     "Code": "ECS15a"
   },
   {
     "Use Case Name": "Clear Event Log",
     "Use Case Title": "CS11 Clear ZigBee Device Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for clearing the Event Log on a Device. \nThis Use Case covers clearing the Event Log only; the Security Log is not allowed to be cleared via a remote Command.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.3",
     "Code": "CS11"
   },
   {
     "Use Case Name": "Write Supplier Contact Details",
     "Use Case Title": "ECS16 Write Supplier Contact Details on ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for writing the Supplier contacts details on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.4",
     "Code": "ECS16"
   },
   {
     "Use Case Name": "Write Supplier Contact Details",
     "Use Case Title": "GCS44 Write Contact Details on GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for writing the Supplier contacts details on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.4",
     "Code": "GCS44"
   },
   {
     "Use Case Name": "Read ESME Energy Registers (Export Energy)",
     "Use Case Title": "ECS17a Read ESME Energy Registers (Export Energy)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading export energy registers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.2",
     "Code": "ECS17a"
   },
   {
     "Use Case Name": "Read Import Energy / Consumption Registers",
     "Use Case Title": "ECS17b Read ESME Energy Registers (Import Energy)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the ESME import energy registers / GSME consumption registers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "ECS17b"
   },
   {
     "Use Case Name": "Read Import Energy / Consumption Registers",
     "Use Case Title": "GCS13a Read GSME Consumption Register",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the ESME import energy registers / GSME consumption registers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "GCS13a"
   },
   {
     "Use Case Name": "Read ESME Energy Registers (Power)",
     "Use Case Title": "ECS17c Read ESME Energy Registers (Power)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the power registers on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.16",
     "Code": "ECS17c"
   },
   {
     "Use Case Name": "Read Energy / Consumption Register (TOU)",
     "Use Case Title": "ECS17d Read ESME Energy Register (TOU)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the TOU Register Matrix.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "ECS17d"
   },
   {
     "Use Case Name": "Read Energy / Consumption Register (TOU)",
     "Use Case Title": "GCS13c Read GSME Register (TOU)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the TOU Register Matrix.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "GCS13c"
   },
   {
     "Use Case Name": "Read ESME Energy Register (TOU with Blocks)",
     "Use Case Title": "ECS17e Read ESME Energy Register (TOU with Blocks)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the TOU with Block Register Matrix.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "ECS17e"
   },
   {
     "Use Case Name": "Read GSME Energy Register (Block Counters)",
     "Use Case Title": "GCS13b Read GSME Block Counters",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the GSME block counters.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.1",
     "Code": "GCS13b"
   },
   {
     "Use Case Name": "Read Maximum Demand Registers (export)",
     "Use Case Title": "ECS18a Read Maximum Demand Registers (export)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Export Maximum Demand registers on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.12",
     "Code": "ECS18a"
   },
   {
     "Use Case Name": "Read Maximum Demand Registers (import)",
     "Use Case Title": "ECS18b Read Maximum Demand Registers (import)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Import Maximum Demand registers on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.12",
     "Code": "ECS18b"
   },
   {
     "Use Case Name": "Read Prepayment Registers",
     "Use Case Title": "ECS19 Read ESME Prepayment Registers",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Smart Meter prepayment registers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.3",
     "Code": "ECS19"
   },
   {
     "Use Case Name": "Read Prepayment Registers",
     "Use Case Title": "GCS14 Read GSME Prepayment Register(s)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Smart Meter prepayment registers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.3",
     "Code": "GCS14"
   },
   {
     "Use Case Name": "Read Billing Data Log (change of mode / tariff triggered exc export)",
     "Use Case Title": "ECS20b Read ESME Billing Data Log (change of mode / tariff triggered exc export)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a Supplier to obtain a data set stored in the Billing Data Log on the device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "ECS20b"
   },
   {
     "Use Case Name": "Read Billing Data Log (change of mode / tariff triggered exc export)",
     "Use Case Title": "GCS15b Read GSME Billing Data Log (change of mode / tariff triggered)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a Supplier to obtain a data set stored in the Billing Data Log on the device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "GCS15b"
   },
   {
     "Use Case Name": "Read Billing Data Log (billing calendar triggered exc export)",
     "Use Case Title": "ECS20c Read ESME Billing Data Log (billing calendar triggered exc export)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a Supplier to obtain a data set stored in the Billing Data Log on the device on an ad-hoc basis for a specified date range.  This Use Case returns all log entries between the two dates specified.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "ECS20c"
   },
   {
     "Use Case Name": "Read Billing Data Log (billing calendar triggered exc export)",
     "Use Case Title": "GCS15c Read GSME Billing Data Log (billing calendar triggered)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a Supplier to obtain a data set stored in the Billing Data Log on the device on an ad-hoc basis for a specified date range.  This Use Case returns all log entries between the two dates specified.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "GCS15c"
   },
   {
     "Use Case Name": "Read Billing Data Log (payment-based debt payments)",
     "Use Case Title": "ECS20a Read ESME Billing Data Log (payment based debt payments)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a  Supplier to obtain a data set stored in the Billing Data Log for the Device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "ECS20a"
   },
   {
     "Use Case Name": "Read Billing Data Log (payment-based debt payments)",
     "Use Case Title": "GCS15d Read GSME Billing Data Log (payment-based debt payments)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a  Supplier to obtain a data set stored in the Billing Data Log for the Device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "GCS15d"
   },
   {
     "Use Case Name": "Read Billing Data Log (prepayment credits)",
     "Use Case Title": "ECS20d Read ESME Billing Data Log (prepayment credits)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a  Supplier to obtain a data set stored in the Billing Data Log for the Device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "ECS20d"
   },
   {
     "Use Case Name": "Read Billing Data Log (prepayment credits)",
     "Use Case Title": "GCS15e Read GSME Billing Data Log (prepayment credits)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is to allow a  Supplier to obtain a data set stored in the Billing Data Log for the Device on an ad-hoc basis for a specified date range.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.4",
     "Code": "GCS15e"
   },
   {
     "Use Case Name": "Start Network Data Log on GSME",
     "Use Case Title": "GCS31 Start Network Data Log on GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for instructing the GSME to begin logging network sampling data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "14.1",
     "Code": "GCS31"
   },
   {
     "Use Case Name": "Read Gas Network Data Log",
     "Use Case Title": "GCS18 Read Gas Network Data Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the gas network sampling data log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.10",
     "Code": "GCS18"
   },
   {
     "Use Case Name": "Read Daily Read Log (exc export)",
     "Use Case Title": "ECS21a Read Electricity Daily Read Log (exc export)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the daily read log on the Smart Meter excluding export.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.6",
     "Code": "ECS21a"
   },
   {
     "Use Case Name": "Read Daily Read Log (exc export)",
     "Use Case Title": "GCS16a Read GSME Daily Read log(s)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the daily read log on the Smart Meter excluding export.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.6",
     "Code": "GCS16a"
   },
   {
     "Use Case Name": "Read (Prepayment) Daily Read Log",
     "Use Case Title": "ECS21b Read Electricity (Prepayment) Daily Read Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the (prepayment) daily read log on the Smart Meter.  The read request relates to retrieving data from a prepayment meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.14",
     "Code": "ECS21b"
   },
   {
     "Use Case Name": "Read (Prepayment) Daily Read Log",
     "Use Case Title": "GCS16b Read GSME Daily Read log(s) (prepayment)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the (prepayment) daily read log on the Smart Meter.  The read request relates to retrieving data from a prepayment meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.14",
     "Code": "GCS16b"
   },
   {
     "Use Case Name": "Read Electricity Daily Read Log (export only)",
     "Use Case Title": "ECS21c Read Electricity Daily Read Log (export only)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the daily read log on the ESME for export.  The read request relates to retrieving data from a credit meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.6",
     "Code": "ECS21c"
   },
   {
     "Use Case Name": "Read Half Hour Profile Data (export)",
     "Use Case Title": "ECS22a Read Electricity Half Hour Profile Data (export)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the half hourly electricity values on the ESME for export.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.8",
     "Code": "ECS22a"
   },
   {
     "Use Case Name": "Read Half Hour Profile Data (consumption)",
     "Use Case Title": "ECS22b Read Electricity Half Hour Profile Data (active import)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the half hourly consumption values.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.8",
     "Code": "ECS22b"
   },
   {
     "Use Case Name": "Read Half Hour Profile Data (consumption)",
     "Use Case Title": "GCS17 Read GSME Profile Data Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the half hourly consumption values.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.8",
     "Code": "GCS17"
   },
   {
     "Use Case Name": "Read Half Hour Profile Data (reactive import)",
     "Use Case Title": "ECS22c Read Electricity Half Hour Profile Data (reactive import)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the half hourly electricity values on the ESME for reactive import.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.8",
     "Code": "ECS22c"
   },
   {
     "Use Case Name": "Read Voltage Operational Data",
     "Use Case Title": "ECS23 Read Voltage Operational Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the voltage operational data on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.10",
     "Code": "ECS23"
   },
   {
     "Use Case Name": "Read Tariff Data",
     "Use Case Title": "ECS24 Read ESME Tariff Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the tariff configuration and operational data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.11",
     "Code": "ECS24"
   },
   {
     "Use Case Name": "Read Tariff Data",
     "Use Case Title": "GCS21f Read GSME Tariff Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the tariff configuration and operational data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.11",
     "Code": "GCS21f"
   },
   {
     "Use Case Name": "Set Alert  Behaviours - Supplier",
     "Use Case Title": "ECS25a Set Alert Behaviours - ESME - Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Alert behaviours - Supplier.  Note that critical events / alerts, so including those relating to security, cannot be configured in this Use Case, and so events logged in the Security Log cannot be configured.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25a"
   },
   {
     "Use Case Name": "Set Alert  Behaviours - Supplier",
     "Use Case Title": "GCS20 Set Alert Behaviours - GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Alert behaviours - Supplier.  Note that critical events / alerts, so including those relating to security, cannot be configured in this Use Case, and so events logged in the Security Log cannot be configured.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "GCS20"
   },
   {
     "Use Case Name": "Set Alert  Behaviours - Network Operator",
     "Use Case Title": "ECS25b Set Alert Behaviours - ESME - Network Operator",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Alert behaviours - ESME - Network Operator.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25b"
   },
   {
     "Use Case Name": "Read Configuration Data Prepayment",
     "Use Case Title": "ECS26a Read ESME Configuration Data Prepayment",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading prepayment Configuration Data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.13",
     "Code": "ECS26a"
   },
   {
     "Use Case Name": "Read Configuration Data Prepayment",
     "Use Case Title": "GCS21b Read GSME Configuration Data Prepayment",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading prepayment Configuration Data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.13",
     "Code": "GCS21b"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (gas)",
     "Use Case Title": "GCS21a Read Gas Configuration Data Device Information",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading general Configuration Data.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS21a"
   },
   {
     "Use Case Name": "Read Configuration Voltage Data",
     "Use Case Title": "ECS26b Read ESME Configuration Voltage Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Voltage Configuration Data on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26b"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information  (randomisation)",
     "Use Case Title": "ECS26c Read ESME Configuration Data Device Information  (randomisation)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Device information Configuration Data on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26c"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (instantaneous power thresholds)",
     "Use Case Title": "ECS26f Read ESME Configuration Data Device Information (instantaneous power thresholds)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the configured instantaneous power thresholds.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26f"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Payment Mode)",
     "Use Case Title": "ECS26j Read ESME Configuration Data Device Information (Payment Mode)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the payment mode configuration.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26j"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Payment Mode)",
     "Use Case Title": "GCS21j Read GSME Configuration Data Device Information (Payment Mode)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the payment mode configuration.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS21j"
   },
   {
     "Use Case Name": "Read Configuration Voltage Data - 3 Phase",
     "Use Case Title": "ECS26k Read ESME Configuration Voltage Data - 3 phase",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Voltage Configuration Data on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26k"
   },
   {
     "Use Case Name": "Read Load Limit Data",
     "Use Case Title": "ECS27 Read ESME Load Limit Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Load Limit configuration and operational data on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.15",
     "Code": "ECS27"
   },
   {
     "Use Case Name": "Set Load Limit Configurations - General Settings",
     "Use Case Title": "ECS28a Set Load Limit Configurations - General Settings",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Load Limit general configurations on the ESME.\nThe general configurations set by this Use Case cover the Load Limit Power Threshold, Load Limit Period, Load Limit Restoration Period and Load Limit Supply State.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.4",
     "Code": "ECS28a"
   },
   {
     "Use Case Name": "Set Load Limit Configuration Counter Reset",
     "Use Case Title": "ECS28b Set Load Limit Configuration Counter Reset",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for resetting the Load Limit Counter (to zero) on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.4",
     "Code": "ECS28b"
   },
   {
     "Use Case Name": "Set Voltage Configurations on ESME with counter resets",
     "Use Case Title": "ECS29a Set Voltage Configurations on ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring the voltage thresholds and resetting the counters.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.5",
     "Code": "ECS29a"
   },
   {
     "Use Case Name": "Set Voltage Configurations on ESME - 3 ph with counter resets",
     "Use Case Title": "ECS29b Set Voltage Configurations on ESME - 3ph",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring the voltage thresholds and resetting the counters.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.5",
     "Code": "ECS29b"
   },
   {
     "Use Case Name": "Set Instantaneous Power Threshold Configuration",
     "Use Case Title": "ECS34 Set Instantaneous Power Threshold Configuration",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting the configurations for the instantaneous power threshold  on the ESME.\nThese settings determine the ambient signals (green/amber/red) or other indicators present on the IHD as consumer energy usage changes throughout the day.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.12",
     "Code": "ECS34"
   },
   {
     "Use Case Name": "Read device Event Log",
     "Use Case Title": "ECS35a Read ESME Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Event Log on the Device",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35a"
   },
   {
     "Use Case Name": "Read device Event Log",
     "Use Case Title": "CS10a Read ZigBee Device Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Event Log on the Device",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "CS10a"
   },
   {
     "Use Case Name": "Read device Security Log",
     "Use Case Title": "ECS35b Read ESME Security Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the  Security Log on the Device",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35b"
   },
   {
     "Use Case Name": "Read device Security Log",
     "Use Case Title": "CS10b Read ZigBee Device Security Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the  Security Log on the Device",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "CS10b"
   },
   {
     "Use Case Name": "Read CHF Event Log",
     "Use Case Title": "ECS35c Read CHF Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Event Log on the CHF only.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35c"
   },
   {
     "Use Case Name": "Read CHF Security Log",
     "Use Case Title": "ECS35d Read CHF Security Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the  Security Log on the CHF.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35d"
   },
   {
     "Use Case Name": "Read ESME Power Event Log",
     "Use Case Title": "ECS35e Read ESME Power Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Power Event Log on the Device",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35e"
   },
   {
     "Use Case Name": "Set Maximum Demand Configurable Time Period",
     "Use Case Title": "ECS37 Set Maximum Demand Configurable Time Period",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting the Maximum Demand Configurable Time Period on the ESME.\nOnce the Maximum Demand Configurable Time Period has been set to a new value, the DCC Service User (Network Operator) will need to reset the Maximum Demand registers (via Use Case ECS57 (Reset Maximum Demand Registers)).",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.18",
     "Code": "ECS37"
   },
   {
     "Use Case Name": "Update Randomised Offset Limit",
     "Use Case Title": "ECS38 Update Randomised Offset Limit",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Randomised Offset Limit on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.12",
     "Code": "ECS38"
   },
   {
     "Use Case Name": "Set MPAN / MPRN Value",
     "Use Case Title": "ECS39a Set MPAN Value on the ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting the Import MPAN/MPRN value on the Smart Meter by the Supplier.  An MPAN/MPRN shall be a utf-8 encoded string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.20",
     "Code": "ECS39a"
   },
   {
     "Use Case Name": "Set MPAN / MPRN Value",
     "Use Case Title": "GCS41 Set MPRN Value on the GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting the Import MPAN/MPRN value on the Smart Meter by the Supplier.  An MPAN/MPRN shall be a utf-8 encoded string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.20",
     "Code": "GCS41"
   },
   {
     "Use Case Name": "Set Export MPAN Value on the ESME",
     "Use Case Title": "ECS39b Set Export MPAN Value on the ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for setting the Export MPAN value on the ESME by the Consumer's export Supplier (who is unknown to the ESME). Setting of Import MPAN on the ESME by the Consumer's Import Supplier is covered by Use Case ECS39a.  An MPAN/MPRN shall be a utf-8 encoded string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.20",
     "Code": "ECS39b"
   },
   {
     "Use Case Name": "Read MPAN / MPRN Value",
     "Use Case Title": "ECS40 Read MPAN Value on the ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the MPAN/MPRN value of the Smart Meter.  An MPAN/MPRN shall be a utf-8 encoded string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS40"
   },
   {
     "Use Case Name": "Read MPAN / MPRN Value",
     "Use Case Title": "GCS46 Read MPRN on the GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the MPAN/MPRN value of the Smart Meter.  An MPAN/MPRN shall be a utf-8 encoded string.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS46"
   },
   {
     "Use Case Name": "Remotely Close the Load Switch on the ESME",
     "Use Case Title": "ECS42 Remotely Close the Load Switch on the ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for remotely closing the Load Switch on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.1",
     "Code": "ECS42"
   },
   {
     "Use Case Name": "Remotely Open the Load Switch / close Valve",
     "Use Case Title": "ECS43 Remotely Open the Load Switch on the ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for remotely opening the Load Switch on the ESME / closing the Valve on the GSME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.2",
     "Code": "ECS43"
   },
   {
     "Use Case Name": "Remotely Open the Load Switch / close Valve",
     "Use Case Title": "GCS32 Remotely close the valve in the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for remotely opening the Load Switch on the ESME / closing the Valve on the GSME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.2",
     "Code": "GCS32"
   },
   {
     "Use Case Name": "Arm Load Switch / Valve",
     "Use Case Title": "ECS44 Arm Load Switch in ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is to remotely arm the Load Switch/Valve on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.3",
     "Code": "ECS44"
   },
   {
     "Use Case Name": "Arm Load Switch / Valve",
     "Use Case Title": "GCS39 Arm Valve in GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is to remotely arm the Load Switch/Valve on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.3",
     "Code": "GCS39"
   },
   {
     "Use Case Name": "Read Status of Load Switch / Valve",
     "Use Case Title": "ECS45 Read Status of Load Switch in the ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the status of the Load Switch/Valve in the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.4",
     "Code": "ECS45"
   },
   {
     "Use Case Name": "Read Status of Load Switch / Valve",
     "Use Case Title": "GCS33 Read GSME Valve Status",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the status of the Load Switch/Valve in the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.4",
     "Code": "GCS33"
   },
   {
     "Use Case Name": "Set Auxiliary Controller Descriptions",
     "Use Case Title": "ECS46a Set Auxiliary Controller Descriptions",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for configuring the Auxiliary Controller Descriptions.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.14",
     "Code": "ECS46a"
   },
   {
     "Use Case Name": "Send CIN to meter",
     "Use Case Title": "ECS50 Send CIN to ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for sending a Customer Identification Number (CIN) to the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "9.1",
     "Code": "ECS50"
   },
   {
     "Use Case Name": "Send CIN to meter",
     "Use Case Title": "GCS36 Send CIN to GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for sending a Customer Identification Number (CIN) to the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "9.1",
     "Code": "GCS36"
   },
   {
     "Use Case Name": "Read ESME/SAPC/GSME/Comms Hub Firmware Version",
     "Use Case Title": "ECS52 Read ESME/SAPC/Comms Hub Firmware Version",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Firmware Version on the Device.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "11.2",
     "Code": "ECS52"
   },
   {
     "Use Case Name": "Read ESME/SAPC/GSME/Comms Hub Firmware Version",
     "Use Case Title": "GCS38 Read GSME Firmware Version",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Firmware Version on the Device.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "11.2",
     "Code": "GCS38"
   },
   {
     "Use Case Name": "Reset Maximum Demand Registers",
     "Use Case Title": "ECS57 Reset ESME Maximum Demand Registers",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for resetting the Maximum Demand Registers on the ESME.  \nThis Use Case should also be used once the Maximum Demand Configurable Time Period has been set to a new value by the DCC Service User (Network Operator) as per Use Case ECS37 (Set Maximum Demand Configurable Time Period).",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.18",
     "Code": "ECS57"
   },
   {
     "Use Case Name": "Read Boost Function Data",
     "Use Case Title": "ECS61c Read Boost Function Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the boost button data from the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.11",
     "Code": "ECS61c"
   },
   {
     "Use Case Name": "Set ALCS/APC and Boost Function Association",
     "Use Case Title": "ECS62 Set ALCS/APC and Boost Function Association",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use case is for setting which of the 5 Auxiliary Controller[n] are controlled by the Boost Function, where those terms have their SMETS meanings.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.9, 7.10",
     "Code": "ECS62"
   },
   {
     "Use Case Name": "Read Daily Consumption Log",
     "Use Case Title": "ECS66 Read ESME Daily Consumption Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Daily Consumption Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.17",
     "Code": "ECS66"
   },
   {
     "Use Case Name": "Read Daily Consumption Log",
     "Use Case Title": "GCS61 Read gas Daily Consumption Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Daily Consumption Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.17",
     "Code": "GCS61"
   },
   {
     "Use Case Name": "Critical Sensitive Alert (Billing Data Log)",
     "Use Case Title": "ECS68 ESME Critical Sensitive Alert (Billing Data Log)",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "This Use Case is for the Critical Sensitive Alert relating to the periodic provision of the Billing Data Log from the Smart Meter to the DCC Service User (Supplier).\nAlert code: 0x8F0A. This Use Case returns only the most recent entry from the log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "A1",
     "Code": "ECS68"
   },
   {
     "Use Case Name": "Critical Sensitive Alert (Billing Data Log)",
     "Use Case Title": "GCS53 Push Billing Data Log as an Alert",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "This Use Case is for the Critical Sensitive Alert relating to the periodic provision of the Billing Data Log from the Smart Meter to the DCC Service User (Supplier).\nAlert code: 0x8F0A. This Use Case returns only the most recent entry from the log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "A1",
     "Code": "GCS53"
   },
   {
     "Use Case Name": "Set Clock",
     "Use Case Title": "ECS70 Set Clock on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the clock.\nRefer to section 9.1.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.11, 8.1",
     "Code": "ECS70"
   },
   {
     "Use Case Name": "Supply Outage Restore Alert from ESME",
     "Use Case Title": "ECS80 Supply Outage Restore Alert from ESME",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "Alert codes: 0x8F35, 0x8F36, 0x8F37, 0x8F38, 0x8F39, 0x8F3A, 0x8F3B, 0x8F3C\nRefer to section 7.2.3",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "ECS80"
   },
   {
     "Use Case Name": "Set Supply Tamper State on ESME",
     "Use Case Title": "ECS81 Set Supply Tamper State on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Supply Tamper State configuration on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.25",
     "Code": "ECS81"
   },
   {
     "Use Case Name": "Read Meter Balance for Smart Meter",
     "Use Case Title": "ECS82 Read Meter Balance for ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the meter balance(s).",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.18",
     "Code": "ECS82"
   },
   {
     "Use Case Name": "Read Meter Balance for Smart Meter",
     "Use Case Title": "GCS60 Read Meter Balance for GSME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the meter balance(s).",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.18",
     "Code": "GCS60"
   },
   {
     "Use Case Name": "Set CV and Conversion Factor Value(s) on the GSME",
     "Use Case Title": "GCS23 Set CV and Conversion Factor Value(s) on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Conversion Value and Conversion Factors on a gas meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.6",
     "Code": "GCS23"
   },
   {
     "Use Case Name": "Apply Prepayment Top Up to GSME (using PPMID)",
     "Use Case Title": "PCS01 Apply Prepayment Top Up to a GSME using PPMID",
+    "Message Type": "SME.C.PPMID-GSME",
+    "Use Case Description": "This Use Case is for a PPMID to add credit to a Smart Meter.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "PCS01"
   },
   {
     "Use Case Name": "Activate Emergency Credit on GSME from PPMID",
     "Use Case Title": "PCS02 Activate Emergency Credit on GSME from PPMID",
+    "Message Type": "SME.C.PPMID-GSME",
+    "Use Case Description": "This Use Case is for a PPMID to send an Active Emergency Credit Command to a Smart Meter.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "PCS02"
   },
   {
     "Use Case Name": "Read Voltage Operational Data - 3 phase",
     "Use Case Title": "ECS23b Read Voltage Operational Data -3 Phase",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the voltage operational data on 3 phase ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.10",
     "Code": "ECS23b"
   },
   {
     "Use Case Name": "Read Tariff Data - second element",
     "Use Case Title": "ECS24b Read ESME Tariff Data - second element",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the second element tariff configuration",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "4.11",
     "Code": "ECS24b"
   },
   {
     "Use Case Name": "Set Clock",
     "Use Case Title": "GCS28 Set Clock on GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "See section 9.1",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "GCS28"
   },
   {
     "Use Case Name": "Clear Auxiliary Controller Event Log",
     "Use Case Title": "ECS15c Clear Auxiliary Controller Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for clearing the Auxiliary Controller Event Log, with its SMETS meaning.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "3.3",
     "Code": "ECS15c"
   },
   {
     "Use Case Name": "Set Price - Second Element",
     "Use Case Title": "ECS01d Set Price on ESME secondary",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for changing the price for second element on the Smart Meter.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.2",
     "Code": "ECS01d"
   },
   {
     "Use Case Name": "Adjust Meter Balance",
     "Use Case Title": "ECS04a Adjust Meter Balance on the ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for adjusting the meter balance on the ESME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "ECS04a"
   },
   {
     "Use Case Name": "Adjust Meter Balance: Reset",
     "Use Case Title": "ECS04b Reset Meter Balance on the ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the meter balance on the ESME to Zero.\nIn processing an authentic Command, the ESME shall undertake the processing required by the SMETS 'Reset Meter Balance' function.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "1.5",
     "Code": "ECS04b"
   },
   {
     "Use Case Name": "Set Voltage Configurations on ESME without counter reset",
     "Use Case Title": "ECS29c Set Voltage Configurations on ESME without counter reset",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring the voltage thresholds and periods.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.5",
     "Code": "ECS29c"
   },
   {
     "Use Case Name": "Set Voltage Configurations on polyphase ESME without counter reset",
     "Use Case Title": "ECS29d Set Voltage Configurations on polyphase ESME without counter reset",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring the voltage thresholds and periods.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.5",
     "Code": "ECS29d"
   },
   {
     "Use Case Name": "Reset RMS Voltage Counters on ESME",
     "Use Case Title": "ECS29e Reset RMS Voltage Counters on ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for resetting the voltage counters.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.27",
     "Code": "ECS29e"
   },
   {
     "Use Case Name": "Reset RMS Voltage Counters on polyphase ESME",
     "Use Case Title": "ECS29f Reset RMS Voltage Counters on polyphase ESME",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for resetting the voltage counters.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.27",
     "Code": "ECS29f"
   },
   {
     "Use Case Name": "Read CHF Sub GHz Channel",
     "Use Case Title": "DBCH01 Read CHF Sub GHz Channel",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "A request to the CHF to read the Sub GHz Channel the CH is currently operating on. See GBCS 10.6.2.1 for the specific meaning of each part of the value returned.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.31",
     "Code": "DBCH01"
   },
   {
     "Use Case Name": "Read CHF Sub GHz Channel Log",
     "Use Case Title": "DBCH02 Read CHF Sub GHz Channel Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "A request to the CHF to read the Sub GHz Channel Log. See GBCS 10.6.2.1 for the specific meaning of each of the values in a log entry.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.32",
     "Code": "DBCH02"
   },
   {
     "Use Case Name": "Read CHF Sub GHz Configuration",
     "Use Case Title": "DBCH03 Read CHF Sub GHz Configuration",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "A request to the CHF to read the Sub GHz Configuration values. See GBCS 10.6.2.3 for the specific meaning of each of the values.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.30",
     "Code": "DBCH03"
   },
   {
     "Use Case Name": "Set CHF Sub GHz Configuration",
     "Use Case Title": "DBCH04 Set CHF Sub GHz Configuration",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "A request to the CHF to set the Sub GHz Configuration values. See GBCS 10.6.2.3 for the specific processing requirements the CHF is required to carry out on receipt of such a Command.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.28",
     "Code": "DBCH04"
   },
   {
     "Use Case Name": "Request CHF Sub GHz Channel Scan",
     "Use Case Title": "DBCH05 Request CHF Sub GHz Channel Scan",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "A request to the CHF to invoke a Sub GHz Channel Scan. See GBCS 10.6.2.3 for the actions the CHF is required to take whenever the corresponding DLMS COSEM attribute is set.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.29",
     "Code": "DBCH05"
   },
   {
     "Use Case Name": "Read CHF device log and check HAN communications",
     "Use Case Title": "CCS06 Read CHF device log and check HAN communications",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case provides details of the list of Devices currently in the Communication Hub's whitelist.\nThe 'whitelist' is called the CHF Device Log in CHTS.\nThis Use Case also provides that date-time at which each Device on the HAN was last communicated with by the Communications Hub.\nFor each Device operating at Sub GHz frequencies, the Use Case provides an indication of the signal strength for the Communications Link.\nNote, that the whitelist may not include the GPF's details, and so those details may not be present in the Response.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.9",
     "Code": "CCS06"
   },
   {
     "Use Case Name": "Limited Duty Cycle Action Taken Sub GHz Alert",
     "Use Case Title": "DBCH06 Limited Duty Cycle Action Taken Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CH has instructed a Device to suspend communications for a period of time. As per GBCS 10.6.2.4, the payload of this Alert and the corresponding Log Entry contains the Entity Identifier of the suspended Device.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH06"
   },
   {
     "Use Case Name": "Sub GHz Sub GHz Channel Changed Sub GHz Alert",
     "Use Case Title": "DBCH07 Sub GHz Sub GHz Channel Changed Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CHF has changed the Sub GHz Channel on which it is operating. See GBCS 10.6.2.1 for the specific meaning of each part of the value returned in the Use Case specific payload.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH07"
   },
   {
     "Use Case Name": "Sub GHz Channel Scan Request Assessment Outcome Sub GHz Alert",
     "Use Case Title": "DBCH08 Sub GHz Channel Scan Request Assessment Outcome Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CHF has assessed whether it can undertake a Sub GHz Channel Scan. See GBCS XXXX for the specific meaning of each part of the value returned in the Use Case specific payload.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH08"
   },
   {
     "Use Case Name": "Sub GHz Configuration Changed Sub GHz Alert",
     "Use Case Title": "DBCH09 Sub GHz Configuration Changed Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CHF's Sub GHz Configuration has changed. See GBCS 10.6.2.3 for the specific meaning of each of the values returned in the Use Case specific payload.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH09"
   },
   {
     "Use Case Name": "Message Discarded Due to Duty Cycle Management Sub GHz Alert",
     "Use Case Title": "DBCH10 Message Discarded Due to Duty Cycle Management Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CHF has discarded a Remote Party Command to a Sub GHz Device due to communications being suspended with that Device. See GBCS 10.6.2.1.1 for the specific meaning of each of the values returned in the Use Case specific payload.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH10"
   },
   {
     "Use Case Name": "No More Sub GHz Device Capacity Sub GHz Alert",
     "Use Case Title": "DBCH11 No More Sub GHz Device Capacity Sub GHz Alert",
+    "Message Type": "SME.A.NC",
+    "Use Case Description": "Notification that the CHF has not allowed a Device to join the SMHAN on a Sub GHz Frequency as the CHF has no more capacity at Sub GHz. See GBCS 10.6.2.4 for the specific meaning of the value returned in the Use Case specific payload.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "DBCH11"
   },
   {
     "Use Case Name": "Update Prepayment Configuration",
     "Use Case Title": "ECS08a Update Prepayment Configuration on ESME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for configuring the prepayment settings on the Smart Meter. \nThis covers setting up the repayment rates, emergency credit functions, credit warning thresholds, and whether debt is collected when credit is exhausted or emergency credit is in use.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.1",
     "Code": "ECS08a"
   },
   {
     "Use Case Name": "Update Prepayment Configuration",
     "Use Case Title": "GCS05 Update Prepayment Configurations on GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for configuring the prepayment settings on the Smart Meter. \nThis covers setting up the repayment rates, emergency credit functions, credit warning thresholds, and whether debt is collected when credit is exhausted or emergency credit is in use.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "2.1",
     "Code": "GCS05"
   },
   {
     "Use Case Name": "Set Event  Behaviours to HAN Device - Supplier",
     "Use Case Title": "ECS25a1 Set Event Behaviours - ESME to HAN Device - Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Event behaviours for notifying events to HAN devices - Supplier.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25a"
   },
   {
     "Use Case Name": "Set Event  Behaviours audible alarm - Supplier",
     "Use Case Title": "ECS25a2 Set Event Behaviours - ESME audible alarm - Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Event behaviours for audible alarms - Supplier.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25a"
   },
   {
     "Use Case Name": "Set Event  Behaviours logging - Supplier",
     "Use Case Title": "ECS25a3 Set Event Behaviours - ESME logging - Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Event behaviours for whether an event is logged or not - Supplier.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25a"
   },
   {
     "Use Case Name": "Set Event  Behaviours logging - Network Operator",
     "Use Case Title": "ECS25b3 Set Event Behaviours - ESME logging - Network Operator",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for configuring Event behaviours for whether an event is logged or not - Network Operator.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.22",
     "Code": "ECS25b"
   },
   {
     "Use Case Name": "Read non-critical event and alert behaviours - Supplier",
     "Use Case Title": "ECS25r1 Read non-critical event and alert behaviours - ESME-  Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the currently configured, non critical alert and event behaviours that are relevant to Suppliers. \nFor the GSME use case, the following shall apply:\n- GBCS non-critical events/alerts use the Event / Alert code range starting 0x81. As per ZSE Table D-174, this equates to a Device Management Cluster Attribute Set within the range that is 'Reserved for non-ZigBee Event Configuration'\n- In line with Device Management Cluster Attribute Sets, the value 0x81FF shall be interpreted by the GSME as the EventGroupID for Event / Alert Codes that start 0x81;\n- GSME shall therefore, in response to the GetEventConfiguration command in GCS20r (which has an Event ID set to 0x81FF), provide, in the Report Event Configuration command in the Response, configuration details of all Event / Alert Codes starting 0x81 which GBCS Table 16.2 mandates a GSME to support and any non-mandated ones which the GSME does support.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS25r"
   },
   {
     "Use Case Name": "Read non-critical event and alert behaviours - Supplier",
     "Use Case Title": "GCS20r Read non-critical event and alert behaviours - GSME-  Supplier",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the currently configured, non critical alert and event behaviours that are relevant to Suppliers. \nFor the GSME use case, the following shall apply:\n- GBCS non-critical events/alerts use the Event / Alert code range starting 0x81. As per ZSE Table D-174, this equates to a Device Management Cluster Attribute Set within the range that is 'Reserved for non-ZigBee Event Configuration'\n- In line with Device Management Cluster Attribute Sets, the value 0x81FF shall be interpreted by the GSME as the EventGroupID for Event / Alert Codes that start 0x81;\n- GSME shall therefore, in response to the GetEventConfiguration command in GCS20r (which has an Event ID set to 0x81FF), provide, in the Report Event Configuration command in the Response, configuration details of all Event / Alert Codes starting 0x81 which GBCS Table 16.2 mandates a GSME to support and any non-mandated ones which the GSME does support.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS20r"
   },
   {
     "Use Case Name": "Read non-critical event and alert behaviours - Network Operator",
     "Use Case Title": "ECS25r2 Read non-critical event and alert behaviours - ESME-  Network Operator",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the currently configured, non critical alert and event behaviours that are relevant to Network Operators.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS25r"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Smart Meter identity and type, including supply tamper / depletion state )",
     "Use Case Title": "ECS26m Read ESME Configuration Data Device Information (identity,  type and supply tamper state)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Smart Meter's Manufacturer Identifier , Model Type and Supply Tamper State. For GSME, Supply Depletion State is also returned. Note that, in common with all other Responses, the Device's Entity Identifier is also returned, with it being part of the Grouping Header.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26m"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Smart Meter identity and type, including supply tamper / depletion state )",
     "Use Case Title": "GCS21m Read GSME Configuration Data Device Information (identity, type and supply tamper / depletion state)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Smart Meter's Manufacturer Identifier , Model Type and Supply Tamper State. For GSME, Supply Depletion State is also returned. Note that, in common with all other Responses, the Device's Entity Identifier is also returned, with it being part of the Grouping Header.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS21m"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (CH identity and type)",
     "Use Case Title": "ECS26n Read CHF Configuration Data Device Information (CH identity and type)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Communication Hub's Manufacturer Identifier and Model Type. Note that, in common with all other Responses, the Device's Entity Identifier is also returned, with it being part of the Grouping Header.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26n"
   },
   {
     "Use Case Name": "Set Billing Calendar",
     "Use Case Title": "GCS25 Set Billing Calendar on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is only retained as a CH requirement in relation to the Tapping Off Mechanism. CHs are required to process any Commands and Responses received in line with the 'Tapping Off Requirements' for GSME Billing Calendar settings",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.8",
     "Code": "GCS25"
   },
   {
     "Use Case Name": "Set Billing Calendar - all periodicities",
     "Use Case Title": "ECS30a Set Billing Calendar on the ESME - all periodicities",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting/configuring the Billing Calendar on the Smart Meter, where the periodicity can be daily, weekly, monthly, quarterly, six monthly or yearly .",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.8",
     "Code": "ECS30a"
   },
   {
     "Use Case Name": "Set Billing Calendar - all periodicities",
     "Use Case Title": "GCS25a Set Billing Calendar on the GSME - all periodicities",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting/configuring the Billing Calendar on the Smart Meter, where the periodicity can be daily, weekly, monthly, quarterly, six monthly or yearly .",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.8",
     "Code": "GCS25a"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Billing Calendar)",
     "Use Case Title": "ECS26l Read ESME Configuration Data Device Information (Billing Calendar - all periodicities)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the billing calendar configuration.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "ECS26l"
   },
   {
     "Use Case Name": "Read Configuration Data Device Information (Billing Calendar)",
     "Use Case Title": "GCS21k Read GSME Configuration Data Device Information (BillingCalendar - all periodicities)",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the billing calendar configuration.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.2",
     "Code": "GCS21k"
   },
   {
     "Use Case Name": "Configure daily resetting of Tariff Block Counter Matrix",
     "Use Case Title": "ECS48 Configure daily resetting of Tariff Block Counter Matrix",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is to turn daily resetting of the ESME Tariff Block Counter Matrix on or off.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.26",
     "Code": "ECS48"
   },
   {
     "Use Case Name": "Apply Prepayment Top Up to ESME (using PPMID)",
     "Use Case Title": "PECS01 Apply Prepayment Top Up to an ESME using PPMID",
+    "Message Type": "ZSE specified",
+    "Use Case Description": "This Use Case is solely to allocate a Message Code to be recorded in the ESME Event Log when an authenticated ZSE Consumer Top Up command is received by the ESME.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "PECS01"
   },
   {
     "Use Case Name": "Activate Emergency Credit on ESME from PPMID",
     "Use Case Title": "PECS02 Activate Emergency Credit on ESME from PPMID",
+    "Message Type": "ZSE specified",
+    "Use Case Description": "This Use Case is solely to allocate a Message Code to be recorded in the ESME Event Log when an authenticated ZSE Select Available Emergency Credit command is received by the ESME.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "PECS02"
   },
   {
     "Use Case Name": "Request to Enable ESME Supply from PPMID",
     "Use Case Title": "PECS03 Request to Enable ESME Supply from PPMID",
+    "Message Type": "ZSE specified",
+    "Use Case Description": "This Use Case is solely to allocate a Message Code to be recorded in the ESME Event Log when an authenticated ZSE Local Change Supply command is received by the ESME. For clarity and in line with SMETS, such commands can only be successful when they are to enable supply and so the Proposed Supply Status parameter has a value 0x02 meaning 'Supply ON'.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "PECS03"
   },
   {
     "Use Case Name": "Request Control of HCALCS [n]",
     "Use Case Title": "HECS01 Request Control of HCALCS [n]",
+    "Message Type": "ZSE specified",
+    "Use Case Description": "This Use Case is solely to allocate a Message Code to be recorded in the recipient Device's Event Log when an authenticated ZSE Get Scheduled Events command is received.",
+    "Remote Party or HAN Message": "HAN Only Message",
+    "Service Reference": "N/A",
     "Code": "HECS01"
   },
   {
     "Use Case Name": "Read CHF Device Logs",
     "Use Case Title": "CCS07 Read CHF Device Logs",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the CHF Device Log and the CHF Historic Device Log, including the hash of the security credentials associated with each Device ID (so the hash of the TC Link Key where such a TC Link Key has been established; an empty string otherwise).",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "8.9",
     "Code": "CCS07"
   },
   {
     "Use Case Name": "Set Uncontrolled Gas Flow Rate and Supply Tamper State on the GSME",
     "Use Case Title": "GCS24a Set Uncontrolled Gas Flow Rate at greater resolution and Supply Tamper State on the GSME",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the uncontrolled gas flow threshold on a GSME.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.7",
     "Code": "GCS24a"
   },
   {
     "Use Case Name": "Read Auxiliary Controller Event Log",
     "Use Case Title": "ECS35g Read Auxiliary Controller Event Log",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading the Auxiliary Controller Event Log.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.13",
     "Code": "ECS35g"
   },
   {
     "Use Case Name": "Set Auxiliary Controller Calendar",
     "Use Case Title": "ECS46d Set Auxiliary Controller Calendar",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the Auxiliary Controller Calendar.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.14.3",
     "Code": "ECS46d"
   },
   {
     "Use Case Name": "Provide Security Credential Details (ESME and SAPC)",
     "Use Case Title": "CS02f Provide Security Credential Details",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See GBCS Section 13.9.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.24.1",
     "Code": "CS02f"
   },
   {
     "Use Case Name": "Update Load Controller Security Credentials",
     "Use Case Title": "CS02g Update Load Controller Security Credentials",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See GBCS Section 13.10.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "6.15.1",
     "Code": "CS02g"
   },
   {
     "Use Case Name": "Command not supported by Device",
     "Use Case Title": "ECS100 Command not supported by Device",
+    "Message Type": "See GBCS Section 7.2.9.1",
+    "Use Case Description": "See GBCS Section 7.2.9.1.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": null,
     "Code": "ECS100"
   },
   {
     "Use Case Name": "Limit APC [n] Level Command processed",
     "Use Case Title": "ECS101 Limit APC [n] Level Command processed",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "See GBCS Section 7.2.9.1.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "ECS101"
   },
   {
     "Use Case Name": "Limit APC [n] Level ended or cancelled",
     "Use Case Title": "ECS102 Limit APC [n] Level ended or cancelled",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "See GBCS Section 7.2.9.1.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "N/A",
     "Code": "ECS102"
   },
   {
     "Use Case Name": "Read Auxiliary Controller Configuration Data",
     "Use Case Title": "ECS61d Read Auxiliary Controller Configuration Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading Auxiliary Controller Configuration Data, where those terms have their SMETS meaning.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.14",
     "Code": "ECS61d"
   },
   {
     "Use Case Name": "Read Auxiliary Controller Operational Data",
     "Use Case Title": "ECS61e Read Auxiliary Controller Operational Data",
+    "Message Type": "SME.C.NC",
+    "Use Case Description": "This Use Case is for reading Auxiliary Controller Operational Data, where those terms have their SMETS meaning.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.15",
     "Code": "ECS61e"
   },
   {
     "Use Case Name": "Set Auxiliary Controller [n] State",
     "Use Case Title": "ECS47a Set Auxiliary Controller [n] State",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for setting the commanded state of one of the Auxiliary Controllers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.13",
     "Code": "ECS47a"
   },
   {
     "Use Case Name": "Limit APC [n] Level",
     "Use Case Title": "ECS47e Limit APC [n] Level",
+    "Message Type": "SME.C.C",
+    "Use Case Description": "This Use Case is for limiting the commanded state of one of the Auxiliary Proportional Controllers.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "7.16",
     "Code": "ECS47e"
   },
   {
     "Use Case Name": "Operational Update",
     "Use Case Title": "ECS200 Operational Update",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "See GBCS Section 7.2.9.1.",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": null,
     "Code": "ECS200"
   },
   {
     "Use Case Name": "Firmware Transfer Alert",
     "Use Case Title": "CCS08 Firmware Transfer Alert",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See section 11.  This Alert is sent if (1) the Communications Hub has discarded an image, (2) a hardware Version Mismatch between OTA Header and target device is found, (3) the transfer to the device has failed and (4) the file transfer to the target device was successful",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CCS08"
   },
   {
     "Use Case Name": "Read PPMID/HCALCS Firmware Version",
     "Use Case Title": "CS08 Read PPMID/HCALCS Firmware Version",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See section 11.8",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS08"
   },
   {
     "Use Case Name": "Distribute Firmware to PPMID",
     "Use Case Title": "CS05c Distribute Firmware to PPMID",
+    "Message Type": "See GBCS",
+    "Use Case Description": "See section 11.6",
+    "Remote Party or HAN Message": null,
+    "Service Reference": "See GBCS",
     "Code": "CS05c"
   },
   {
     "Use Case Name": "PPMID Firmware Activation Alert",
     "Use Case Title": "CS09 PPMID Firmware Activation Alert",
+    "Message Type": "SME.A.C",
+    "Use Case Description": "See section 11.9. This Alert is sent by the PPMID following the activation of a firmware image",
+    "Remote Party or HAN Message": "Remote Party",
+    "Service Reference": "See GBCS",
     "Code": "CS09"
   }
 ]
