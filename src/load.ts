@@ -51,6 +51,10 @@ export function parseFileTag(tag: string): RegExpMatchArray | null {
 export interface GBCSRecord {
   'Use Case Name': string
   'Use Case Title': string
+  'Message Type': string
+  'Use Case Description': string
+  'Remote Party or HAN Message': string | null
+  'Service Reference': string | null
 }
 
 export function lookupGBCS(code: string): GBCSRecord | undefined {

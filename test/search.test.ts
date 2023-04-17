@@ -48,3 +48,21 @@ describe('search', () => {
     expect(results[0].matches).toBeDefined()
   })
 })
+
+describe('searchGBCS', () => {
+  test('defined', () => {
+    expect(search.searchGBCS).toBeDefined()
+  })
+
+  test('nominal', async () => {
+    expect(search.searchGBCS()).toBeInstanceOf(Fuse)
+  })
+
+  test('search-basic', async () => {
+    const fuse = search.searchGBCS()
+    const results = fuse.search('ECS17b')
+    expect(results.length).toBeGreaterThan(1)
+    expect(results[0].item).toMatchObject(['ECS17b', expect.any(Object)])
+    expect(results[0].matches).toBeDefined()
+  })
+})
