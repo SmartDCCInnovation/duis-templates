@@ -38,7 +38,7 @@
   },
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node16": "^16.1.0",
     "@types/glob": "^8.0.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^20.1.0",
