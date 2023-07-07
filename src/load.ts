@@ -44,7 +44,7 @@ export interface Template {
 
 export function parseFileTag(tag: string): RegExpMatchArray | null {
   return tag.match(
-    /(?:(?<gbcs>[A-Z]+\d+(?:(?:[a-z]|[A-Z]{1,2})\d?)?|CCS05CCS04)(?<gbcsvariant>(?:[A-Z][a-z]+|NO|ACB|MAC|S)+)?_)?(?<srv>\d+(?:\.\d+)+)(?:_(?<variant>[A-Za-z_]*))?/
+    /(?:(?<gbcs>[A-Z]+\d+(?:(?:[a-z]|[A-Z]{1,2})\d?)?|CCS05CCS04)(?<gbcsvariant>(?:[A-Z][a-z]+|NO|ACB|MAC|S)+)?_)?(?<srv>\d+(?:\.\d+)+)(?:_(?<variant>[A-Za-z_]*))?/,
   )
 }
 
@@ -63,7 +63,7 @@ export function lookupGBCS(code: string): GBCSRecord | undefined {
 
 export async function loadTemplate(
   logger: (msg: string) => void,
-  fileName: string
+  fileName: string,
 ): Promise<[string, Template] | null> {
   let tag = basename(fileName, '_REQUEST_DUIS.XML')
   if (tag.search(/_(ERROR|NOT_FOUND)/) >= 0) {
@@ -78,7 +78,7 @@ export async function loadTemplate(
   const serviceReferenceVariant = lookupSRV(groups.groups?.['srv'] ?? '')
   if (!serviceReferenceVariant) {
     logger(
-      `not loading duis template ${fileName} as srv is unknown ${groups.groups?.['srv']}`
+      `not loading duis template ${fileName} as srv is unknown ${groups.groups?.['srv']}`,
     )
     return null
   }
@@ -89,7 +89,7 @@ export async function loadTemplate(
       gbcsTitle = gbcsRecord['Use Case Title']
     } else {
       logger(
-        `not loading duis template ${fileName} as gbcs code could not be looked up`
+        `not loading duis template ${fileName} as gbcs code could not be looked up`,
       )
       return null
     }
@@ -131,7 +131,7 @@ export interface LoadTemplateOptions {
 export type TemplateDirectory = Record<string, Template>
 
 export async function loadTemplates(
-  options: LoadTemplateOptions
+  options: LoadTemplateOptions,
 ): Promise<TemplateDirectory> {
   const logger =
     options.logger ??
@@ -143,9 +143,9 @@ export async function loadTemplates(
       ...(options.path
         ? [options.path]
         : [__dirname, '..', 'templates']
-      ).concat(join('**', '*_REQUEST_DUIS.XML'))
+      ).concat(join('**', '*_REQUEST_DUIS.XML')),
     ),
-    { windowsPathsNoEscape: true }
+    { windowsPathsNoEscape: true },
   )
 
   const zz = (
