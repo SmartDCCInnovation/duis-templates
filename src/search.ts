@@ -31,7 +31,7 @@ import mappingTable from './gbcs-mapping-table.json'
  */
 export function search(
   td: TemplateDirectory,
-  options?: Fuse.IFuseOptions<[string, Template]>
+  options?: Fuse.IFuseOptions<[string, Template]>,
 ): Fuse<[string, Template]> {
   return new Fuse(Object.entries(td), {
     keys: [
@@ -60,7 +60,7 @@ let mapping: [string, GBCSRecord][]
  * @returns Fuse
  */
 export function searchGBCS(
-  options?: Fuse.IFuseOptions<[string, GBCSRecord]>
+  options?: Fuse.IFuseOptions<[string, GBCSRecord]>,
 ): Fuse<[string, GBCSRecord]> {
   if (mapping === undefined) {
     mapping = mappingTable.map((e) => [e.Code, e])
