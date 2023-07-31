@@ -14,6 +14,12 @@ the templates from `XML` into `JSON` is managed by the
 [Fuse.js][fusejs] library to easily search the templates, e.g. by *GBCS Use
 Case*, *Service Request Variant*, *Service Request Name*. 
 
+## Tariff Builder
+
+Tariff data within GB smart metering is complex and directly building a tariff
+from a template is non-trivial. To help reduce the burden, a tariff builder is
+provided within this library. See example below.
+
 ## Usage
 
 Developed and tested against `node 16`. Install from `npm`:
@@ -204,6 +210,105 @@ Which might return:
 }
 ```
 
+## Build ESME Tariff
+
+The library includes utility functions to help build a service request `1.1.1` -
+*Update Import Tariff (Primary Element)* for an ESME.
+
+This consists of two parts, first a TypeScript [definition of a
+tariff](./src/tariff.dto.ts) and then a [utility function](./src/tariff.ts) to
+convert this into a DUIS request. They TypeScript definition of a tariff
+attempts to be as close as possible to the underlying DUIS request, so an
+understanding of service request `1.1.1` is required, which can be found in
+[dugids][dugids].
+
+A simple tariff which is £0.55/day standing charge and £0.20/kWh can be defined
+as follows:
+
+```ts
+import { Tariff } from '@smartdcc/duis-parser'
+
+const tariff: Tariff = {
+  seasons: [
+    {
+      name: 'all',
+      weekProfile: 1
+    },
+  ],
+  weekProfiles: [[1, 1, 1, 1, 1, 1, 1]],
+  dayProfiles: [
+    [
+      {
+        mode: 'tou',
+        startTime: 0,
+        action: 1,
+      },
+    ],
+  ],
+  specialDays: [],
+  tous: [20],
+  blocks: [
+    {
+      prices: [0, 0],
+      thresholds: [ 0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+    {
+      prices: [0, 0],
+      thresholds: [0],
+    },
+  ],
+  pricing: {
+    priceScale: -2,
+    standingCharge: 55,
+    standingChargeScale: -2,
+  },
+}
+```
+
+This would then be constructed into a DUIS request as follows:
+
+```ts
+import {SimplifiedDuisOutputRequest, buildUpdateImportTariff_PrimaryElement} from '@smartdcc/duis-templates'
+
+const req: SimplifiedDuisOutputRequest = buildUpdateImportTariff_PrimaryElement(
+  simpleToUTariff,
+  {
+    counter: BigInt(1006),
+    originatorId: '90-b3-d5-1f-30-01-00-00',
+    targetId: '00-db-12-34-56-78-90-a0',
+  },
+)
+```
+
+This can be used in the same way as the *templates* discussed
+[above](#template-usage).
+
+For more examples of tariffs, see the [test script](./test/tariff.test.ts).
+
 ## Contributing
 
 Contributions are welcome!
@@ -231,3 +336,4 @@ Copyright 2022, Smart DCC Limited, All rights reserved. Project is licensed unde
 [duis-parser]: https://github.com/SmartDCCInnovation/duis-parser "DUIS Parser"
 [boxed]: https://www.smartdcc.co.uk/our-smart-network/network-products-services/dcc-boxed/ "DCC Boxed"
 [fusejs]: https://fusejs.io/ "Fuse.js"
+[dugids]: https://smartenergycodecompany.co.uk/document-download-centre/download-info/dugids-3-1a-operational-dugids-november-2019/ "DUGIDS"
