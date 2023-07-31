@@ -131,7 +131,7 @@ describe('parseFileTag', () => {
   ]
 
   testData.forEach(({ tag, result }) =>
-    test(tag, () => expect(load.parseFileTag(tag)?.groups).toEqual(result))
+    test(tag, () => expect(load.parseFileTag(tag)?.groups).toEqual(result)),
   )
 })
 
@@ -150,8 +150,8 @@ describe('loadTemplate', () => {
     await expect(
       load.loadTemplate(
         logger,
-        resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML')
-      )
+        resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML'),
+      ),
     ).resolves.toBeNull()
     expect(logger).not.toBeCalled()
   })
@@ -160,8 +160,8 @@ describe('loadTemplate', () => {
     await expect(
       load.loadTemplate(
         logger,
-        resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML')
-      )
+        resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML'),
+      ),
     ).resolves.toBeNull()
     expect(logger).not.toBeCalled()
   })
@@ -170,12 +170,12 @@ describe('loadTemplate', () => {
     await expect(
       load.loadTemplate(
         logger,
-        resolve(__dirname, 'data', 'SOME_FILE_REQUEST_DUIS.XML')
-      )
+        resolve(__dirname, 'data', 'SOME_FILE_REQUEST_DUIS.XML'),
+      ),
     ).resolves.toBeNull()
     expect(logger).toBeCalledTimes(1)
     expect(logger).toBeCalledWith(
-      expect.stringContaining('could not determine tag')
+      expect.stringContaining('could not determine tag'),
     )
   })
 
@@ -183,8 +183,8 @@ describe('loadTemplate', () => {
     await expect(
       load.loadTemplate(
         logger,
-        resolve(__dirname, 'data', '9.9.9.9.9.9_REQUEST_DUIS.XML')
-      )
+        resolve(__dirname, 'data', '9.9.9.9.9.9_REQUEST_DUIS.XML'),
+      ),
     ).resolves.toBeNull()
     expect(logger).toBeCalledTimes(1)
     expect(logger).toBeCalledWith(expect.stringContaining('srv is unknown'))
@@ -194,8 +194,8 @@ describe('loadTemplate', () => {
     await expect(
       load.loadTemplate(
         logger,
-        resolve(__dirname, 'data', 'ECS52_11.2_SUCCESS_RESPONSE_DUIS.XML')
-      )
+        resolve(__dirname, 'data', 'ECS52_11.2_SUCCESS_RESPONSE_DUIS.XML'),
+      ),
     ).resolves.toBeNull()
     expect(logger).toBeCalledTimes(1)
     expect(logger).toBeCalledWith(expect.stringContaining('not a request'))
@@ -208,13 +208,13 @@ describe('loadTemplate', () => {
         resolve(
           __dirname,
           'data',
-          'ECS99b_4.1.1_SINGLE_SUCCESS_REQUEST_DUIS.XML'
-        )
-      )
+          'ECS99b_4.1.1_SINGLE_SUCCESS_REQUEST_DUIS.XML',
+        ),
+      ),
     ).resolves.toBeNull()
     expect(logger).toBeCalledTimes(1)
     expect(logger).toBeCalledWith(
-      expect.stringContaining('gbcs code could not be looked up')
+      expect.stringContaining('gbcs code could not be looked up'),
     )
   })
 
@@ -222,7 +222,7 @@ describe('loadTemplate', () => {
     const fileName = resolve(
       __dirname,
       'data',
-      '12.2_DEVICE_PRE_NOTIFICATION_REQUEST_DUIS.XML'
+      '12.2_DEVICE_PRE_NOTIFICATION_REQUEST_DUIS.XML',
     )
     await expect(load.loadTemplate(logger, fileName)).resolves.toEqual([
       '12.2_DEVICE_PRE_NOTIFICATION',
@@ -249,7 +249,7 @@ describe('loadTemplate', () => {
     const fileName = resolve(
       __dirname,
       'data',
-      'ECS17b_4.1.1_SINGLE_SUCCESS_REQUEST_DUIS.XML'
+      'ECS17b_4.1.1_SINGLE_SUCCESS_REQUEST_DUIS.XML',
     )
     await expect(load.loadTemplate(logger, fileName)).resolves.toEqual([
       'ECS17b_4.1.1_SINGLE',
@@ -276,7 +276,7 @@ describe('loadTemplate', () => {
     const fileName = resolve(
       __dirname,
       'data',
-      'CS03A2NonCritical_8.7.2_SUCCESS_REQUEST_DUIS.XML'
+      'CS03A2NonCritical_8.7.2_SUCCESS_REQUEST_DUIS.XML',
     )
     await expect(load.loadTemplate(logger, fileName)).resolves.toEqual([
       'CS03A2NonCritical_8.7.2',
@@ -316,12 +316,14 @@ describe('loadTemplates', () => {
       load.loadTemplates({
         logger,
         path: resolve(__dirname, 'data'),
-      })
+      }),
     ).resolves.toEqual({
       '12.2_DEVICE_PRE_NOTIFICATION': expect.any(Object),
       'CS03A2NonCritical_8.7.2': expect.any(Object),
       'ECS17b_4.1.1_SINGLE': expect.any(Object),
       'ECS52_11.2': expect.any(Object),
+      'ECS01a_1.1.1_IMMEDIATE_TOU': expect.any(Object),
+      'ECS01a_1.1.1_IMMEDIATE_BLOCK': expect.any(Object),
     })
     expect(logger).toHaveBeenCalledTimes(1)
   })
