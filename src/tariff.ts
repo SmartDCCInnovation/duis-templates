@@ -33,6 +33,36 @@ export function singlify(d: XMLData[]): XMLData[] | XMLData {
   return d
 }
 
+export function buildDate(d: {
+  year?: number
+  month?: number
+  dayOfMonth?: number
+  dayOfWeek?: number
+}): XMLData {
+  return {
+    Year:
+      d.year === undefined
+        ? { NonSpecifiedYear: '' }
+        : { SpecifiedYear: `${d.year}` },
+    Month:
+      d.month === undefined
+        ? { NonSpecifiedMonth: '' }
+        : d.month === 0xfd
+        ? { SecondLastDayOfMonth: '' }
+        : d.month === 0xfe
+        ? { LastDayOfMonth: '' }
+        : { SpecifiedMonth: `${d.month}` },
+    DayOfMonth:
+      d.dayOfMonth === undefined
+        ? { NonSpecifiedDayOfMonth: '' }
+        : { SpecifiedDayOfMonth: `${d.dayOfMonth}` },
+    DayOfWeek:
+      d.dayOfWeek === undefined
+        ? { NonSpecifiedDayOfWeek: '' }
+        : { SpecifiedDayOfWeek: `${d.dayOfWeek}` },
+  }
+}
+
 /**
  * Builds SRV 1.1.1 from a Tariff object
  *
@@ -54,24 +84,7 @@ export function buildUpdateImportTariff_PrimaryElement(
       t.seasons.map(
         (season): XMLData => ({
           SeasonName: season.name,
-          SeasonStartDate: {
-            Year:
-              season.year === undefined
-                ? { NonSpecifiedYear: '' }
-                : { SpecifiedYear: `${season.year}` },
-            Month:
-              season.month === undefined
-                ? { NonSpecifiedMonth: '' }
-                : { SpecifiedMonth: `${season.month}` },
-            DayOfMonth:
-              season.dayOfMonth === undefined
-                ? { NonSpecifiedDayOfMonth: '' }
-                : { SpecifiedDayOfMonth: `${season.dayOfMonth}` },
-            DayOfWeek:
-              season.dayOfWeek === undefined
-                ? { NonSpecifiedDayOfWeek: '' }
-                : { SpecifiedDayOfWeek: `${season.dayOfWeek}` },
-          },
+          SeasonStartDate: buildDate(season),
           ReferencedWeekName: `${season.weekProfile}`,
         }),
       ),
@@ -123,24 +136,7 @@ export function buildUpdateImportTariff_PrimaryElement(
 
   const SpecialDay: XMLData[] = t.specialDays.map(
     (specialDay): XMLData => ({
-      Date: {
-        Year:
-          specialDay.year === undefined
-            ? { NonSpecifiedYear: '' }
-            : { SpecifiedYear: `${specialDay.year}` },
-        Month:
-          specialDay.month === undefined
-            ? { NonSpecifiedMonth: '' }
-            : { SpecifiedMonth: `${specialDay.month}` },
-        DayOfMonth:
-          specialDay.dayOfMonth === undefined
-            ? { NonSpecifiedDayOfMonth: '' }
-            : { SpecifiedDayOfMonth: `${specialDay.dayOfMonth}` },
-        DayOfWeek:
-          specialDay.dayOfWeek === undefined
-            ? { NonSpecifiedDayOfWeek: '' }
-            : { SpecifiedDayOfWeek: `${specialDay.dayOfWeek}` },
-      },
+      Date: buildDate(specialDay),
       ReferencedDayName: `${specialDay.dayProfile}`,
     }),
   )

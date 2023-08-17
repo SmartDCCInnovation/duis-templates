@@ -27,3 +27,4 @@ export {
 export { search, searchGBCS } from './search'
 export { buildUpdateImportTariff_PrimaryElement } from './tariff'
 export type * from './tariff.dto'
+export { isTariff } from './tariff.is'
