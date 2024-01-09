@@ -48,10 +48,10 @@ export function buildDate(d: {
       d.month === undefined
         ? { NonSpecifiedMonth: '' }
         : d.month === 0xfd
-        ? { SecondLastDayOfMonth: '' }
-        : d.month === 0xfe
-        ? { LastDayOfMonth: '' }
-        : { SpecifiedMonth: `${d.month}` },
+          ? { SecondLastDayOfMonth: '' }
+          : d.month === 0xfe
+            ? { LastDayOfMonth: '' }
+            : { SpecifiedMonth: `${d.month}` },
     DayOfMonth:
       d.dayOfMonth === undefined
         ? { NonSpecifiedDayOfMonth: '' }
