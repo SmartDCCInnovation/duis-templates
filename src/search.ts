@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Fuse from 'fuse.js'
+import Fuse, { IFuseOptions } from 'fuse.js'
 import { GBCSRecord, Template, TemplateDirectory } from './load'
 import mappingTable from './gbcs-mapping-table.json'
 
@@ -31,7 +31,7 @@ import mappingTable from './gbcs-mapping-table.json'
  */
 export function search(
   td: TemplateDirectory,
-  options?: Fuse.IFuseOptions<[string, Template]>,
+  options?: IFuseOptions<[string, Template]>,
 ): Fuse<[string, Template]> {
   return new Fuse(Object.entries(td), {
     keys: [
@@ -60,7 +60,7 @@ let mapping: [string, GBCSRecord][]
  * @returns Fuse
  */
 export function searchGBCS(
-  options?: Fuse.IFuseOptions<[string, GBCSRecord]>,
+  options?: IFuseOptions<[string, GBCSRecord]>,
 ): Fuse<[string, GBCSRecord]> {
   if (mapping === undefined) {
     mapping = mappingTable.map((e) => [e.Code, e])
