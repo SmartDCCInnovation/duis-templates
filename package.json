@@ -13,7 +13,8 @@
     "build": "tsc",
     "prepack": "npm run build",
     "lint": "eslint src/",
-    "prettier-check": "prettier -c  \"src/**/*.{css,html,ts,json,md,yaml,yml}\""
+    "prettier-check": "prettier -c  \"src/**/*.{css,html,ts,json,md,yaml,yml}\"",
+    "load-templates": "(cd src ; npx ts-node -e \"import { loadTemplates } from './load' ; loadTemplates({logger: console.log}).then(x => Object.keys(x).map(k => console.log(\\`\\${k}\\\t\\${x[k].gbcs}\\\t\\${x[k].gbcsVariant}\\\t\\${x[k].info}\\`)))\")"
   },
   "repository": {
     "type": "git",
@@ -52,10 +53,11 @@
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.0",
     "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@smartdcc/duis-parser": "^0.4.0",
+    "@smartdcc/duis-parser": "^0.6.0",
     "fuse.js": "^7.0.0",
     "glob": "^10.1.0"
   },
