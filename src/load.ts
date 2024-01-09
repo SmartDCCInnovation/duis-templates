@@ -30,6 +30,7 @@ import { basename, resolve } from 'node:path'
 import { readFile } from 'node:fs/promises'
 import mappingTable from './gbcs-mapping-table.json'
 import { join } from 'node:path'
+import { inspect } from 'node:util'
 
 export interface Template {
   fileName: string
@@ -97,6 +98,7 @@ export async function loadTemplate(
   const template_buffer = await readFile(fileName)
   const simplified = parseDuis('simplified', template_buffer)
   if (!isSimplifiedDuisOutputRequest(simplified)) {
+    console.log(inspect(simplified, false, 10))
     logger(`not loading duis template ${fileName} its not a request`)
     return null
   }
