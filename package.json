@@ -59,7 +59,7 @@
   "dependencies": {
     "@smartdcc/duis-parser": "^0.6.0",
     "fuse.js": "^7.0.0",
-    "glob": "^10.1.0"
+    "glob": "^11.0.0"
   },
   "keywords": [
     "duis",
