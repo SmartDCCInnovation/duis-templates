@@ -46,7 +46,7 @@
     "@types/node": "^22.5.0",
     "@types/ungap__structured-clone": "^1.2.0",
     "@ungap/structured-clone": "^1.2.0",
-    "del-cli": "^5.0.0",
+    "del-cli": "^6.0.0",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.2.1",
