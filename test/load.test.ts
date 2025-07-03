@@ -153,7 +153,7 @@ describe('loadTemplate', () => {
         resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML'),
       ),
     ).resolves.toBeNull()
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 
   test('ERROR-request-not-load', async () => {
@@ -163,7 +163,7 @@ describe('loadTemplate', () => {
         resolve(__dirname, 'data', 'GCS13a_4.1.1_ERROR_REQUEST_DUIS.XML'),
       ),
     ).resolves.toBeNull()
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 
   test('bad-tag', async () => {
@@ -173,8 +173,8 @@ describe('loadTemplate', () => {
         resolve(__dirname, 'data', 'SOME_FILE_REQUEST_DUIS.XML'),
       ),
     ).resolves.toBeNull()
-    expect(logger).toBeCalledTimes(1)
-    expect(logger).toBeCalledWith(
+    expect(logger).toHaveBeenCalledTimes(1)
+    expect(logger).toHaveBeenCalledWith(
       expect.stringContaining('could not determine tag'),
     )
   })
@@ -186,8 +186,10 @@ describe('loadTemplate', () => {
         resolve(__dirname, 'data', '9.9.9.9.9.9_REQUEST_DUIS.XML'),
       ),
     ).resolves.toBeNull()
-    expect(logger).toBeCalledTimes(1)
-    expect(logger).toBeCalledWith(expect.stringContaining('srv is unknown'))
+    expect(logger).toHaveBeenCalledTimes(1)
+    expect(logger).toHaveBeenCalledWith(
+      expect.stringContaining('srv is unknown'),
+    )
   })
 
   test('non-request', async () => {
@@ -197,8 +199,10 @@ describe('loadTemplate', () => {
         resolve(__dirname, 'data', 'ECS52_11.2_SUCCESS_RESPONSE_DUIS.XML'),
       ),
     ).resolves.toBeNull()
-    expect(logger).toBeCalledTimes(1)
-    expect(logger).toBeCalledWith(expect.stringContaining('not a request'))
+    expect(logger).toHaveBeenCalledTimes(1)
+    expect(logger).toHaveBeenCalledWith(
+      expect.stringContaining('not a request'),
+    )
   })
 
   test('bad-gbcs-code', async () => {
@@ -212,8 +216,8 @@ describe('loadTemplate', () => {
         ),
       ),
     ).resolves.toBeNull()
-    expect(logger).toBeCalledTimes(1)
-    expect(logger).toBeCalledWith(
+    expect(logger).toHaveBeenCalledTimes(1)
+    expect(logger).toHaveBeenCalledWith(
       expect.stringContaining('gbcs code could not be looked up'),
     )
   })
@@ -242,7 +246,7 @@ describe('loadTemplate', () => {
         info: 'DEVICE_PRE_NOTIFICATION',
       }),
     ])
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 
   test('nominal-device', async () => {
@@ -269,7 +273,7 @@ describe('loadTemplate', () => {
         info: 'SINGLE',
       }),
     ])
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 
   test('nominal-device-variant', async () => {
@@ -296,7 +300,7 @@ describe('loadTemplate', () => {
         info: undefined,
       }),
     ])
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 })
 
