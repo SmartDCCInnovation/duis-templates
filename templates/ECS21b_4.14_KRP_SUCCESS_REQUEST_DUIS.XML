@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.2">
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.4">
   <sr:Header>
     <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A0:1003</sr:RequestID>
     <sr:CommandVariant>1</sr:CommandVariant>
