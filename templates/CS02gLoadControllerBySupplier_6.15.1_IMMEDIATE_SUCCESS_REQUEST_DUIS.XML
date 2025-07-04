@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.2">
+<sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.4">
   <sr:Header>
     <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A0:1000</sr:RequestID>
     <sr:CommandVariant>4</sr:CommandVariant>
@@ -12,8 +12,8 @@
       <sr:RemotePartyFloorSeqNumber>0</sr:RemotePartyFloorSeqNumber>
       <sr:ReplacementCertificates>
         <sr:SupplierOrNetworkOperatorCertificates>
-          <sr:DigitalSigningCertificate>MIIBrDCCAVKgAwIBAgIQSge8AdklO1H68B9+x9pbLzAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMTYwMTEwMDAwMDAwWhcNMjYwMTA5MjM1OTU5WjA7MRgwFgYDVQQDDA9HSVRURVNUU1VQUExJRVIxCzAJBgNVBAsMAjAyMRIwEAYDVQQtAwkAkLPVHzABAAAwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAT6b7/6HJpOQvSjzWWfO+uQoxtWWu17p5F3SLpoT+TGACE8vp0lgh+ngNlHuXXJMPN3q6EhApAEQmR6maNlIIiwo1kwVzAOBgNVHQ8BAf8EBAMCB4AwEQYDVR0OBAoECEMEa0+3xPEbMB0GA1UdIAEB/wQTMBEwDwYNKoY6AAGEj7kPAQIBBDATBgNVHSMEDDAKgAhPVojX7JM74jAKBggqhkjOPQQDAgNIADBFAiEAvXvJRsABv/3nyEO/DVW5np3WTPuHhsJQfc4fIpxRBmUCIH+0LzbjIIn8tTVK5fnRmV/wHfG0cjU7E6excCnrDULy</sr:DigitalSigningCertificate>
-          <sr:KeyAgreementCertificate>MIIBkTCCATigAwIBAgIQUte4oQnybYmM6CHDKHj2GDAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMTYwMTEwMDAwMDAwWhcNMjYwMTA5MjM1OTU5WjAhMQswCQYDVQQLDAIwMjESMBAGA1UELQMJAJCz1R8wAQAAMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEartih5c6NPj1TVj7+Sopio293w80a1XJHh3y3EuOK9or5JldH0gboZ+lk7E/3NDXphROJ6Sj5ERjxV91WzBrCKNZMFcwDgYDVR0PAQH/BAQDAgMIMBEGA1UdDgQKBAhClmfBuLseNDAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDRwAwRAIge1YK/quODMW7pXRwjhVjnVvAT99g++ZXsufFNqU6k+ECIHbJPRLidSgI+UjpVJs+xwJUBcqOEEI+x6v57e19MFS6</sr:KeyAgreementCertificate>
+          <sr:DigitalSigningCertificate>MIIBkjCCATigAwIBAgIQdevbCGyuvCi1fWSxqmD49TAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMjMxMTE2MTI1NTM2WhcNMzMxMTE2MTI1NTM2WjAhMQswCQYDVQQLDAIwODESMBAGA1UELQMJAJCz1R8wAQAIMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOqKj96/dyfHoEiE8HocgskjjWCtEyebCj5QJ6m1u90YUjspGQSKrns9YidgCjR/1NmkMADCRCKAQVYhcaHQfcaNZMFcwDgYDVR0PAQH/BAQDAgeAMBEGA1UdDgQKBAhOXtfTq0NIXDAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDSAAwRQIhAPtuI1oOQ/JzDU8VlQhLIyHPiJMTs9jWPauchKNtVZAVAiA5MluR2f0x0EA/62v7S3wR9uPW0PJnuYvoumkFjreeow==</sr:DigitalSigningCertificate>
+          <sr:KeyAgreementCertificate>MIIBkjCCATigAwIBAgIQJKwB34OE4Y97U5serUYovDAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMjMxMTE2MTI1NTMwWhcNMzMxMTE2MTI1NTMwWjAhMQswCQYDVQQLDAIwODESMBAGA1UELQMJAJCz1R8wAQAIMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEh6lkHd5mmjYhcysfmgjmbf2igWVysSoZhIaEMblpy8xmbCe5rdBKFcbaNTxl3cHN7qJ7t4wkx8j/P7qMf5oRz6NZMFcwDgYDVR0PAQH/BAQDAgMIMBEGA1UdDgQKBAhE8gyXHg7jaTAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDSAAwRQIgMU4tV6jyG3Wi3qIRwHGfHfRy6EdrbTAFtXpfZOyRoncCIQCi8Qoi63z1EQasfBAR9d53KifOfCeGMFp6N0HgeabC2Q==</sr:KeyAgreementCertificate>
         </sr:SupplierOrNetworkOperatorCertificates>
       </sr:ReplacementCertificates>
       <sr:CertificationPathCertificates>
