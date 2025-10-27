@@ -41,7 +41,6 @@
   "devDependencies": {
     "@smartdcc/duis-sign-wrap": "^0.2.0",
     "@tsconfig/node20": "^20.1.4",
-    "@types/glob": "^9.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.10",
     "@types/ungap__structured-clone": "^1.2.0",
