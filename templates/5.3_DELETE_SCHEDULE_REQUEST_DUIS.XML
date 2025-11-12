@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sr:Request xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:sr="http://www.dccinterface.co.uk/ServiceUserGateway" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="5.4">
   <sr:Header>
-    <sr:RequestID>90-B3-D5-1F-30-01-00-00:00-DB-12-34-56-78-90-A0:1004</sr:RequestID>
-    <sr:CommandVariant>1</sr:CommandVariant>
-    <sr:ServiceReference>4.14</sr:ServiceReference>
-    <sr:ServiceReferenceVariant>4.14</sr:ServiceReferenceVariant>
+    <sr:RequestID>90-B3-D5-1F-30-01-00-00:90-B3-D5-1F-30-00-00-02:1000</sr:RequestID>
+    <sr:CommandVariant>8</sr:CommandVariant>
+    <sr:ServiceReference>5.3</sr:ServiceReference>
+    <sr:ServiceReferenceVariant>5.3</sr:ServiceReferenceVariant>
   </sr:Header>
   <sr:Body>
-    <sr:ReadPrepaymentDailyReadLog>
-      <sr:ReadLogPeriod>
-        <sr:StartDateTime>2014-12-25T23:30:00.00Z</sr:StartDateTime>
-        <sr:EndDateTime>2015-01-01T00:00:00.00Z</sr:EndDateTime>
-      </sr:ReadLogPeriod>
-      <sr:KAPublicSecurityCredentials>MIIBkzCCATigAwIBAgIQSj97+PfFUjk0Q1JiboPZoDAKBggqhkjOPQQDAjAaMQswCQYDVQQLEwIwNzELMAkGA1UEAxMCWjEwHhcNMjUwOTAxMDAwMDAwWhcNMzUwOTAxMjM1OTU5WjAhMQswCQYDVQQLDAIwMjESMBAGA1UELQMJAJCz1R8wAQAAMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEknT/+KOvVtawFtOo+mDaPleVUespWBnIDrekPzByKyJVBCheSlF2uWM027cuoM/AycbkCgrjwok3w0JY8OhAuqNZMFcwDgYDVR0PAQH/BAQDAgMIMBEGA1UdDgQKBAhAW4xiaH2PcDAdBgNVHSABAf8EEzARMA8GDSqGOgABhI+5DwECAQQwEwYDVR0jBAwwCoAIT1aI1+yTO+IwCgYIKoZIzj0EAwIDSQAwRgIhAItlq+baT4AjEAXODZblBZtFpaBaRiTGN0j8br9LIfdZAiEAnDrs5/Q2QPovcaZG0XcpuMHsHIvhplbhP3yN5lJuLZQ=</sr:KAPublicSecurityCredentials>
-    </sr:ReadPrepaymentDailyReadLog>
+    <sr:DeleteSchedule>
+      <sr:DSPScheduleID>123</sr:DSPScheduleID>
+    </sr:DeleteSchedule>
   </sr:Body>
   <ds:Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
     <!-- NOTE: The digest, signature and serial number values below are placeholders and should not be used for actual authentication purposes. -->
