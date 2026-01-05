@@ -57,7 +57,7 @@
     "typescript-eslint": "^8.2.0"
   },
   "dependencies": {
-    "@smartdcc/duis-parser": "^0.6.0",
+    "@smartdcc/duis-parser": "^0.7.0",
     "fuse.js": "^7.0.0",
     "glob": "^11.0.0"
   },
