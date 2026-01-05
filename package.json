@@ -42,7 +42,7 @@
     "@smartdcc/duis-sign-wrap": "^0.3.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.0.10",
+    "@types/node": "^25.0.3",
     "@types/ungap__structured-clone": "^1.2.0",
     "@ungap/structured-clone": "^1.2.0",
     "del-cli": "^7.0.0",
